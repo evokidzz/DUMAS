@@ -320,7 +320,7 @@ while ($data = $sql->fetch_assoc()) {
 						<a href="#" class="nav-link">
 							<i class="nav-icon fas fa-flag"></i>
 							<p>
-								Pelayanan Umum
+								Jenis Layanan
 								<i class="right fas fa-angle-left"></i>
 							</p>
 						</a>
@@ -329,35 +329,35 @@ while ($data = $sql->fetch_assoc()) {
 							<li class="nav-item">
 								<a href="?page=data-baru" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
-									<p>Daftar Baru</p>
+									<p>Laporan Baru</p>
 								</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="?page=data-mutasi" class="nav-link">
+								<a href="?page=data-disposisi" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
-									<p>Mutasi</p>
+									<p>Disposisi</p>
 								</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="?page=data-hapus" class="nav-link">
+								<a href="?page=data-perkembangan" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
-									<p>Penghapusan</p>
+									<p>Perkembangan DUMAS</p>
 								</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="?page=data-betul" class="nav-link">
+								<a href="?page=data-cabut" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
-									<p>Pembetulan</p>
+									<p>Pencabutan Laporan</p>
 								</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="?page=data-salinan" class="nav-link">
+								<a href="?page=data-hasil" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
-									<p>Salinan</p>
+									<p>Hasil Penyelidikan</p>
 								</a>
 							</li>
 							<ul class="nav nav-treeview">
@@ -383,37 +383,37 @@ while ($data = $sql->fetch_assoc()) {
 						<ul class="nav nav-treeview">
 
 							<li class="nav-item">
-								<a href="?page=cetak-baru" class="nav-link">
+								<a href="?page=data-baru" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
-									<p>Daftar Baru</p>
+									<p>Laporan Baru</p>
 								</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="?page=cetak-mutasi" class="nav-link">
+								<a href="?page=data-disposisi" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
-									<p>Mutasi</p>
+									<p>Disposisi</p>
 								</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="?page=cetak-hapus" class="nav-link">
+								<a href="?page=data-perkembangan" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
-									<p>Penghapusan</p>
+									<p>Perkembangan DUMAS</p>
 								</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="?page=cetak-betul" class="nav-link">
+								<a href="?page=data-cabut" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
-									<p>Pembetulan</p>
+									<p>Pencabutan Laporan</p>
 								</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="?page=cetak-salinan" class="nav-link">
+								<a href="?page=data-hasil" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
-									<p>Salinan</p>
+									<p>Hasil Penyelidikan</p>
 								</a>
 							</li>
 
