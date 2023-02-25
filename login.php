@@ -9,8 +9,8 @@ include "inc/koneksi.php";
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Login | MonPel PBB-P2</title>
-	<link rel="icon" href="dist/img/logo_banjar.png">
+	<title>Login | DUMAS BIDPROPAM</title>
+	<link rel="icon" href="dist/img/logo_propam.png">
 	<!-- Tell the browser to be responsive to screen width -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -35,12 +35,12 @@ include "inc/koneksi.php";
 				<div class="login-logo">
 					<a href="login.php">
 						<font color="black">
-							<b>MonPel PBB-P2</b></br><b> BAPENDA </b>
+							<b>DUMAS BIDPROPAM</b></br><b> POLDA KALSEL </b>
 						</font>
 					</a>
 				</div>
 				<center>
-					<img src="dist/img/logo_banjar.png" width=110px />
+					<img src="dist/img/logo_propam.png" width=110px />
 					<br>
 					<br>
 				</center>

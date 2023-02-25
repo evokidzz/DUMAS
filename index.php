@@ -27,8 +27,8 @@ while ($data = $sql->fetch_assoc()) {
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>MonPel PBB-P2</title>
-	<link rel="icon" href="dist/img/logo_banjar.png">
+	<title>DUMAS BIDPROPAM</title>
+	<link rel="icon" href="dist/img/logo_propam.png">
 	<!-- Tell the browser to be responsive to screen width -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -95,8 +95,8 @@ while ($data = $sql->fetch_assoc()) {
 
 			<!-- Brand Logo -->
 			<a href="index.php" class="brand-link">
-				<img src="dist/img/logo_banjar.png" alt="AdminLTE Logo" class="brand-image" style="opacity: 10">
-				<span class="brand-text">MonPel PBB-P2</span>
+				<img src="dist/img/logo_propam.png" alt="AdminLTE Logo" class="brand-image" style="opacity: 10">
+				<span class="brand-text">DUMAS BIDPROPAM</span>
 			</a>
 
 			<!-- Sidebar -->
@@ -151,7 +151,7 @@ while ($data = $sql->fetch_assoc()) {
 									<li class="nav-item">
 										<a href="?page=data-wp" class="nav-link">
 											<i class="far fa-circle nav-icon"></i>
-											<p>Data Wajib Pajak</p>
+											<p>Data DUMAS</p>
 										</a>
 									</li>
 
@@ -181,35 +181,35 @@ while ($data = $sql->fetch_assoc()) {
 							<li class="nav-item">
 								<a href="?page=data-baru" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
-									<p>Daftar Baru</p>
+									<p>Laporan Baru</p>
 								</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="?page=data-mutasi" class="nav-link">
+								<a href="?page=data-disposisi" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
-									<p>Mutasi</p>
+									<p>Disposisi</p>
 								</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="?page=data-hapus" class="nav-link">
+								<a href="?page=data-perkembangan" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
-									<p>Penghapusan</p>
+									<p>Perkembangan DUMAS</p>
 								</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="?page=data-betul" class="nav-link">
+								<a href="?page=data-cabut" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
-									<p>Pembetulan</p>
+									<p>Pencabutan Laporan</p>
 								</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="?page=data-salinan" class="nav-link">
+								<a href="?page=data-hasil" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
-									<p>Salinan</p>
+									<p>Hasil Penyelidikan</p>
 								</a>
 							</li>
 							<ul class="nav nav-treeview">
@@ -234,38 +234,38 @@ while ($data = $sql->fetch_assoc()) {
 						</a>
 						<ul class="nav nav-treeview">
 
-							<li class="nav-item">
-								<a href="?page=cetak-baru" class="nav-link">
+						<li class="nav-item">
+								<a href="?page=data-baru" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
-									<p>Daftar Baru</p>
+									<p>Laporan Baru</p>
 								</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="?page=cetak-mutasi" class="nav-link">
+								<a href="?page=data-disposisi" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
-									<p>Mutasi</p>
+									<p>Disposisi</p>
 								</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="?page=cetak-hapus" class="nav-link">
+								<a href="?page=data-perkembangan" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
-									<p>Penghapusan</p>
+									<p>Perkembangan DUMAS</p>
 								</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="?page=cetak-betul" class="nav-link">
+								<a href="?page=data-cabut" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
-									<p>Pembetulan</p>
+									<p>Pencabutan Laporan</p>
 								</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="?page=cetak-salinan" class="nav-link">
+								<a href="?page=data-hasil" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
-									<p>Salinan</p>
+									<p>Hasil Penyelidikan</p>
 								</a>
 							</li>
 
@@ -517,80 +517,80 @@ while ($data = $sql->fetch_assoc()) {
 								break;
 
 
-								//jenis pelayanan - mutasi
-							case 'data-mutasi':
-								include "admin/surat/mutasi/data_mutasi.php";
+								//jenis pelayanan - disposisi
+							case 'data-disposisi':
+								include "admin/surat/disposisi/data_disposisi.php";
 								break;
-							case 'add-mutasi':
-								include "admin/surat/mutasi/add_mutasi.php";
+							case 'add-disposisi':
+								include "admin/surat/disposisi/add_disposisi.php";
 								break;
-							case 'del-mutasi':
-								include "admin/surat/mutasi/del_mutasi.php";
+							case 'del-disposisi':
+								include "admin/surat/disposisi/del_disposisi.php";
 								break;
-							case 'edit-mutasi':
-								include "admin/surat/mutasi/edit_mutasi.php";
-								break;
-
-								//jenis pelayanan - cetak mutasi							
-							case 'cetak-mutasi':
-								include "admin/cetak/mutasi/cetak_mutasi.php";
+							case 'edit-disposisi':
+								include "admin/surat/disposisi/edit_disposisi.php";
 								break;
 
-								//jenis pelayanan - hapus
-							case 'data-hapus':
-								include "admin/surat/hapus/data_hapus.php";
-								break;
-							case 'add-hapus':
-								include "admin/surat/hapus/add_hapus.php";
-								break;
-							case 'del-hapus':
-								include "admin/surat/hapus/del_hapus.php";
-								break;
-							case 'edit-hapus':
-								include "admin/surat/hapus/edit_hapus.php";
+								//jenis pelayanan - cetak disposisi							
+							case 'cetak-disposisi':
+								include "admin/cetak/disposisi/cetak_disposisi.php";
 								break;
 
-								//jenis pelayanan - cetak hapus							
-							case 'cetak-hapus':
-								include "admin/cetak/hapus/cetak_hapus.php";
+								//jenis pelayanan - perkembangan
+							case 'data-perkembangan':
+								include "admin/surat/perkembangan/data_perkembangan.php";
+								break;
+							case 'add-perkembangan':
+								include "admin/surat/perkembangan/add_perkembangan.php";
+								break;
+							case 'del-perkembangan':
+								include "admin/surat/perkembangan/del_perkembangan.php";
+								break;
+							case 'edit-perkembangan':
+								include "admin/surat/perkembangan/edit_perkembangan.php";
 								break;
 
-								//jenis pelayanan - betul
-							case 'data-betul':
-								include "admin/surat/betul/data_betul.php";
-								break;
-							case 'add-betul':
-								include "admin/surat/betul/add_betul.php";
-								break;
-							case 'del-betul':
-								include "admin/surat/betul/del_betul.php";
-								break;
-							case 'edit-betul':
-								include "admin/surat/betul/edit_betul.php";
+								//jenis pelayanan - cetak perkembangan							
+							case 'cetak-perkembangan':
+								include "admin/cetak/perkembangan/cetak_perkembangan.php";
 								break;
 
-								//jenis pelayanan - cetak betul							
-							case 'cetak-betul':
-								include "admin/cetak/betul/cetak_betul.php";
+								//jenis pelayanan - cabut
+							case 'data-cabut':
+								include "admin/surat/cabut/data_cabut.php";
+								break;
+							case 'add-cabut':
+								include "admin/surat/cabut/add_cabut.php";
+								break;
+							case 'del-cabut':
+								include "admin/surat/cabut/del_cabut.php";
+								break;
+							case 'edit-cabut':
+								include "admin/surat/cabut/edit_cabut.php";
 								break;
 
-								//jenis pelayanan - salinan
-							case 'data-salinan':
-								include "admin/surat/salinan/data_salinan.php";
-								break;
-							case 'add-salinan':
-								include "admin/surat/salinan/add_salinan.php";
-								break;
-							case 'del-salinan':
-								include "admin/surat/salinan/del_salinan.php";
-								break;
-							case 'edit-salinan':
-								include "admin/surat/salinan/edit_salinan.php";
+								//jenis pelayanan - cetak cabut							
+							case 'cetak-cabut':
+								include "admin/cetak/cabut/cetak_cabut.php";
 								break;
 
-								//jenis pelayanan - cetak salinan							
-							case 'cetak-salinan':
-								include "admin/cetak/salinan/cetak_salinan.php";
+								//jenis pelayanan - hasil
+							case 'data-hasil':
+								include "admin/surat/hasil/data_hasil.php";
+								break;
+							case 'add-hasil':
+								include "admin/surat/hasil/add_hasil.php";
+								break;
+							case 'del-hasil':
+								include "admin/surat/hasil/del_hasil.php";
+								break;
+							case 'edit-hasil':
+								include "admin/surat/hasil/edit_hasil.php";
+								break;
+
+								//jenis pelayanan - cetak hasil							
+							case 'cetak-hasil':
+								include "admin/cetak/hasil/cetak_hasil.php";
 								break;
 
 
