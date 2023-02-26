@@ -77,9 +77,9 @@
       </div>
 
       <div class="form-group row">
-        <label class="col-sm-2 col-form-label" for="keterangan">KETERANGAN</label>
+        <label class="col-sm-2 col-form-label" for="ket">KETERANGAN</label>
         <div class="col-sm-6">
-          <input type="text" class="form-control" id="keterangan" name="keterangan" placeholder="PROSES LIDIK DIHENTIKAN" required>
+          <input type="text" class="form-control" id="ket" name="ket" placeholder="PROSES LIDIK DIHENTIKAN" required>
         </div>
       </div>
 

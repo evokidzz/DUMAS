@@ -1,12 +1,12 @@
 <div class="card card-dark">
   <div class="card-header">
     <h3 class="card-title">
-      <i class="fa fa-edit"></i> Tambah Data Perkembangan Dumas
+      <i class="fa fa-edit"></i> Tambah Data Hasil Penyelidikan
   </div>
   <form action="" method="post" enctype="multipart/form-data">
     <div class="card-body">
 
-      <div class="form-group row">
+    <div class="form-group row">
         <label class="col-sm-2 col-form-label" for="no_dumas">NO.DUMAS</label>
         <div class="col-sm-6">
           <input type="text" class="form-control" id="no_dumas" name="no_dumas" placeholder="NO.PELAYANAN" required>
@@ -77,17 +77,21 @@
       </div>
 
       <div class="form-group row">
-        <label class="col-sm-2 col-form-label" for="ket">KETERANGAN</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" id="ket" name="ket" placeholder="PROSES LIDIK ATAU SELESAI" required>
-        </div>
-      </div>
+				<label class="col-sm-2 col-form-label">KEPUTUSAN</label>
+				<div class="col-sm-4">
+					<select name="keputusan" id="keputusan" class="form-control">
+						<option>- Pilih -</option>
+						<option>Selesai</option>
+						<option>Sesuai Dengan Keputusan Hukuman</option>
+					</select>
+				</div>
+			</div>
 
 
     </div>
     <div class="card-footer">
       <input type="submit" name="Simpan" value="Simpan" class="btn btn-info">
-      <a href="?page=data-dumas" title="Kembali" class="btn btn-secondary">Batal</a>
+      <a href="?page=data-hapus" title="Kembali" class="btn btn-secondary">Batal</a>
     </div>
   </form>
 </div>
@@ -98,7 +102,7 @@ if (isset($_POST['Simpan'])) {
 
   $validatesql ="SELECT "
 
-  $sql_simpan = "INSERT INTO tb_dumas (no_dumas,tanggal,perihal,nama_pelapor,no_ktp,nama_terlapor,pangkat_terlapor,asal_dinas,uraian,ket) VALUES (
+  $sql_simpan = "INSERT INTO tb_hapus (no_dumas,tanggal,perihal,nama_pelapor,no_ktp,nama_terlapor,pangkat_terlapor,asal_dinas,uraian,ket) VALUES (
     '" . $_POST['no_dumas'] . "',
     '" . $_POST['tanggal'] . "',
     '" . $_POST['perihal'] . "',
@@ -111,7 +115,7 @@ if (isset($_POST['Simpan'])) {
     '" . $_POST['ket'] . "')";
 
   if ($_POST['no_dumas']->rowCount() > 0) {
-    echo "No.Dumas Sdh Ada";
+    echo "No.dumas Sdh Ada";
   } else {
     $query_simpan = mysqli_query($koneksi, $sql_simpan);
     mysqli_close($koneksi);
@@ -121,14 +125,14 @@ if (isset($_POST['Simpan'])) {
     echo "<script>
 		  Swal.fire({title: 'Tambah Data Berhasil',text: '',icon: 'success',confirmButtonText: 'OK'
 		  }).then((result) => {if (result.value){
-			  window.location = 'index.php?page=data-dumas';
+			  window.location = 'index.php?page=data-hapus';
 			  }
 		  })</script>";
   } else {
     echo "<script>
 		  Swal.fire({title: 'Tambah Data Gagal',text: '',icon: 'error',confirmButtonText: 'OK'
 		  }).then((result) => {if (result.value){
-			  window.location = 'index.php?page=add-dumas';
+			  window.location = 'index.php?page=add-hapus';
 			  }
 		  })</script>" . mysqli_errno($koneksi);
   }
