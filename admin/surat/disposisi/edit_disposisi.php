@@ -104,7 +104,7 @@ if (isset($_GET['kode'])) {
         </div>
         <div class="card-footer">
             <input type="submit" name="Ubah" value="Ubah" class="btn btn-info">
-            <a href="?page=data-baru" title="Kembali" class="btn btn-secondary">Batal</a>
+            <a href="?page=data-disposisi" title="Kembali" class="btn btn-secondary">Batal</a>
         </div>
     </form>
 </div>
@@ -124,7 +124,8 @@ if (isset($_POST['Ubah'])) {
     nama_terlapor='" . $_POST['nama_terlapor'] . "', 
     pangkat_terlapor='" . $_POST['pangkat_terlapor'] . "',      
     uraian='" . $_POST['uraian'] . "'
-    WHERE id_baru='" . $_POST['id_baru'] . "'";
+    level='" . $_POST['level'] . "'
+    WHERE id_disposisi='" . $_POST['id_disposisi'] . "'";
     $query_ubah = mysqli_query($koneksi, $sql_ubah);
     mysqli_close($koneksi);
 
@@ -133,14 +134,14 @@ if (isset($_POST['Ubah'])) {
         echo "<script>
       Swal.fire({title: 'Ubah Data Berhasil',text: '',icon: 'success',confirmButtonText: 'OK'
       }).then((result) => {if (result.value)
-        {window.location = 'index.php?page=data-baru';
+        {window.location = 'index.php?page=data-disposisi';
         }
       })</script>";
     } else {
         echo "<script>
       Swal.fire({title: 'Ubah Data Gagal',text: '',icon: 'error',confirmButtonText: 'OK'
       }).then((result) => {if (result.value)
-        {window.location = 'index.php?page=data-baru';
+        {window.location = 'index.php?page=data-disposisi';
         }
       })</script>";
     }

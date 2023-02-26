@@ -16,7 +16,7 @@ $data = mysqli_fetch_array($sql_per_id); { ?>
     <div class="card-body">
       <div class="table-responsive">
         <div>
-          <a href="?page=add-baru" class="btn btn-primary">
+          <a href="?page=add-disposisi" class="btn btn-primary">
             <i class="fa fa-edit"></i>Tambah Data</a>
         </div>
         <br>
@@ -42,7 +42,7 @@ $data = mysqli_fetch_array($sql_per_id); { ?>
 
             <?php
             $no = 1;
-            $sql = $koneksi->query("SELECT * FROM tb_baru ORDER BY id_disposisi DESC");
+            $sql = $koneksi->query("SELECT * FROM tb_disposisi ORDER BY id_disposisi DESC");
             while ($data = $sql->fetch_assoc()) {
             ?>
 
@@ -57,6 +57,7 @@ $data = mysqli_fetch_array($sql_per_id); { ?>
                 <td><?php echo $data['pangkat_terlapor']; ?></td>
                 <td><?php echo $data['asal_dinas']; ?></td>
                 <td><?php echo $data['uraian']; ?></td>
+                <td><?php echo $data['level']; ?></td>
                 <td class="text-center">
                   </a>
                   <a href="?page=edit-disposisi&kode=<?php echo $data['id_disposisi']; ?>" title="Edit" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>

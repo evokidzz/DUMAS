@@ -77,7 +77,7 @@
       </div>
 
       <div class="form-group row">
-				<label class="col-sm-2 col-form-label">Level</label>
+				<label class="col-sm-2 col-form-label">LEVEL</label>
 				<div class="col-sm-4">
 					<select name="level" id="level" class="form-control">
 						<option>- Pilih -</option>
@@ -90,7 +90,7 @@
     </div>
     <div class="card-footer">
       <input type="submit" name="Simpan" value="Simpan" class="btn btn-info">
-      <a href="?page=data-baru" title="Kembali" class="btn btn-secondary">Batal</a>
+      <a href="?page=data-disposisi" title="Kembali" class="btn btn-secondary">Batal</a>
     </div>
   </form>
 </div>
@@ -101,7 +101,7 @@ if (isset($_POST['Simpan'])) {
 
   $validatesql ="SELECT "
 
-  $sql_simpan = "INSERT INTO tb_baru (no_dumas,tanggal,perihal,nama_pelapor,no_ktp,nama_terlapor,pangkat_terlapor,asal_dinas,uraian,level) VALUES (
+  $sql_simpan = "INSERT INTO tb_disposisi (no_dumas,tanggal,perihal,nama_pelapor,no_ktp,nama_terlapor,pangkat_terlapor,asal_dinas,uraian,level) VALUES (
     '" . $_POST['no_dumas'] . "',
     '" . $_POST['tanggal'] . "',
     '" . $_POST['perihal'] . "',
@@ -124,14 +124,14 @@ if (isset($_POST['Simpan'])) {
     echo "<script>
 		  Swal.fire({title: 'Tambah Data Berhasil',text: '',icon: 'success',confirmButtonText: 'OK'
 		  }).then((result) => {if (result.value){
-			  window.location = 'index.php?page=data-baru';
+			  window.location = 'index.php?page=data-disposisi';
 			  }
 		  })</script>";
   } else {
     echo "<script>
 		  Swal.fire({title: 'Tambah Data Gagal',text: '',icon: 'error',confirmButtonText: 'OK'
 		  }).then((result) => {if (result.value){
-			  window.location = 'index.php?page=add-baru';
+			  window.location = 'index.php?page=add-disposisi';
 			  }
 		  })</script>" . mysqli_errno($koneksi);
   }
