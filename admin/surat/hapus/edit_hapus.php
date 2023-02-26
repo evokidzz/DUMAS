@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_GET['kode'])) {
-    $sql_cek = "SELECT * FROM tb_baru WHERE id_baru='" . $_GET['kode'] . "'";
+    $sql_cek = "SELECT * FROM tb_hapus WHERE id_hapus='" . $_GET['kode'] . "'";
     $query_cek = mysqli_query($koneksi, $sql_cek);
     $data_cek = mysqli_fetch_array($query_cek, MYSQLI_BOTH);
 }
@@ -12,13 +12,13 @@ if (isset($_GET['kode'])) {
 <div class="card card-dark">
     <div class="card-header">
         <h3 class="card-title">
-            <i class="fa fa-edit"></i> Ubah Data Berkas Daftar Baru
+            <i class="fa fa-edit"></i> Ubah Data Pencabutan Laporan
         </h3>
     </div>
     <form action="" method="post" enctype="multipart/form-data">
         <div class="card-body">
 
-            <input type='hidden' class="form-control" name="id_baru" value="<?php echo $data_cek['id_baru']; ?>" readonly />
+            <input type='hidden' class="form-control" name="id_hapus" value="<?php echo $data_cek['id_hapus']; ?>" readonly />
 
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label" for="no_dumas">NO.DUMAS</label>
@@ -76,7 +76,6 @@ if (isset($_GET['kode'])) {
                 </div>
             </div>
 
-
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label" for="uraian">URAIAN</label>
                 <div class="col-sm-6">
@@ -84,11 +83,18 @@ if (isset($_GET['kode'])) {
                 </div>
             </div>
 
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="ket">KETERANGAN</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="ket" name="ket" value="<?php echo $data_cek['ket']; ?>">
+                </div>
+            </div>
+
 
         </div>
         <div class="card-footer">
             <input type="submit" name="Ubah" value="Ubah" class="btn btn-info">
-            <a href="?page=data-baru" title="Kembali" class="btn btn-secondary">Batal</a>
+            <a href="?page=data-hapus" title="Kembali" class="btn btn-secondary">Batal</a>
         </div>
     </form>
 </div>
@@ -99,8 +105,8 @@ if (isset($_GET['kode'])) {
 
 
 if (isset($_POST['Ubah'])) {
-    $sql_ubah = "UPDATE tb_baru SET 
-    no_dumas='" . $_POST['no_dumas'] . "', 
+    $sql_ubah = "UPDATE tb_hapus SET 
+    no_hapus='" . $_POST['no_hapus'] . "', 
     tanggal='" . $_POST['tanggal'] . "', 
     perihal='" . $_POST['perihal'] . "', 
     nama_pelapor='" . $_POST['nama_pelapor'] . "',
@@ -108,7 +114,8 @@ if (isset($_POST['Ubah'])) {
     nama_terlapor='" . $_POST['nama_terlapor'] . "', 
     pangkat_terlapor='" . $_POST['pangkat_terlapor'] . "',      
     uraian='" . $_POST['uraian'] . "'
-    WHERE id_baru='" . $_POST['id_baru'] . "'";
+    level='" . $_POST['level'] . "'
+    WHERE id_hapus='" . $_POST['id_hapus'] . "'";
     $query_ubah = mysqli_query($koneksi, $sql_ubah);
     mysqli_close($koneksi);
 
@@ -117,14 +124,14 @@ if (isset($_POST['Ubah'])) {
         echo "<script>
       Swal.fire({title: 'Ubah Data Berhasil',text: '',icon: 'success',confirmButtonText: 'OK'
       }).then((result) => {if (result.value)
-        {window.location = 'index.php?page=data-baru';
+        {window.location = 'index.php?page=data-hapus';
         }
       })</script>";
     } else {
         echo "<script>
       Swal.fire({title: 'Ubah Data Gagal',text: '',icon: 'error',confirmButtonText: 'OK'
       }).then((result) => {if (result.value)
-        {window.location = 'index.php?page=data-baru';
+        {window.location = 'index.php?page=data-hapus';
         }
       })</script>";
     }
