@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_GET['kode'])) {
-    $sql_cek = "SELECT * FROM tb_baru WHERE id_baru='" . $_GET['kode'] . "'";
+    $sql_cek = "SELECT * FROM tb_disposisi WHERE id_disposisi='" . $_GET['kode'] . "'";
     $query_cek = mysqli_query($koneksi, $sql_cek);
     $data_cek = mysqli_fetch_array($query_cek, MYSQLI_BOTH);
 }
@@ -12,13 +12,13 @@ if (isset($_GET['kode'])) {
 <div class="card card-dark">
     <div class="card-header">
         <h3 class="card-title">
-            <i class="fa fa-edit"></i> Ubah Data Berkas Daftar Baru
+            <i class="fa fa-edit"></i> Ubah Data Berkas Disposisi
         </h3>
     </div>
     <form action="" method="post" enctype="multipart/form-data">
         <div class="card-body">
 
-            <input type='hidden' class="form-control" name="id_baru" value="<?php echo $data_cek['id_baru']; ?>" readonly />
+            <input type='hidden' class="form-control" name="id_disposisi" value="<?php echo $data_cek['id_diposisi']; ?>" readonly />
 
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label" for="no_dumas">NO.DUMAS</label>
@@ -76,11 +76,27 @@ if (isset($_GET['kode'])) {
                 </div>
             </div>
 
-
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label" for="uraian">URAIAN</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" id="uraian" name="uraian" value="<?php echo $data_cek['uraian']; ?>">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Level</label>
+                <div class="col-sm-4">
+                    <select name="level" id="level" class="form-control">
+                        <option value="">-- Pilih Level --</option>
+                        <?php
+                        //menhecek data yg dipilih sebelumnya
+                        if ($data_cek['level'] == "Administrator") echo "<option value='Administrator' selected>Administrator</option>";
+                        else echo "<option value='Administrator'>Administrator</option>";
+
+                        if ($data_cek['level'] == "Sekretaris") echo "<option value='Sekretaris' selected>Sekretaris</option>";
+                        else echo "<option value='Sekretaris'>Sekretaris</option>";
+                        ?>
+                    </select>
                 </div>
             </div>
 

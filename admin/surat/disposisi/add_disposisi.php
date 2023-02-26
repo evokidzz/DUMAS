@@ -1,7 +1,7 @@
 <div class="card card-dark">
   <div class="card-header">
     <h3 class="card-title">
-      <i class="fa fa-edit"></i> Tambah Data Laporan Baru
+      <i class="fa fa-edit"></i> Tambah Data Disposisi
   </div>
   <form action="" method="post" enctype="multipart/form-data">
     <div class="card-body">
@@ -69,6 +69,24 @@
         </div>
       </div>
 
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="uraian">URAIAN</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="uraian" name="uraian" placeholder="" required>
+        </div>
+      </div>
+
+      <div class="form-group row">
+				<label class="col-sm-2 col-form-label">Level</label>
+				<div class="col-sm-4">
+					<select name="level" id="level" class="form-control">
+						<option>- Pilih -</option>
+						<option>Subbid Paminal</option>
+						<option>Subbid Provos</option>
+					</select>
+				</div>
+			</div>
+
     </div>
     <div class="card-footer">
       <input type="submit" name="Simpan" value="Simpan" class="btn btn-info">
@@ -83,7 +101,7 @@ if (isset($_POST['Simpan'])) {
 
   $validatesql ="SELECT "
 
-  $sql_simpan = "INSERT INTO tb_baru (no_dumas,tanggal,perihal,nama_pelapor,no_ktp,nama_terlapor,pangkat_terlapor,asal_dinas,kec,uraian) VALUES (
+  $sql_simpan = "INSERT INTO tb_baru (no_dumas,tanggal,perihal,nama_pelapor,no_ktp,nama_terlapor,pangkat_terlapor,asal_dinas,uraian,level) VALUES (
     '" . $_POST['no_dumas'] . "',
     '" . $_POST['tanggal'] . "',
     '" . $_POST['perihal'] . "',
@@ -91,10 +109,12 @@ if (isset($_POST['Simpan'])) {
     '" . $_POST['no_ktp'] . "',
     '" . $_POST['nama_terlapor'] . "',
     '" . $_POST['pangkat_terlapor'] . "',
-    '" . $_POST['uraian'] . "')";
+    '" . $_POST['asal_dinas'] . "',
+    '" . $_POST['uraian'] . "',
+    '" . $_POST['level'] . "')";
 
   if ($_POST['no_dumas']->rowCount() > 0) {
-    echo "No.Pelayanan Sdh Ada";
+    echo "No.Dumas Sdh Ada";
   } else {
     $query_simpan = mysqli_query($koneksi, $sql_simpan);
     mysqli_close($koneksi);

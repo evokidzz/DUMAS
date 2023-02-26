@@ -33,6 +33,7 @@ $data = mysqli_fetch_array($sql_per_id); { ?>
               <th>PANGKAT</th>
               <th>ASAL DINAS</th>
               <th>URAIAN</th>
+              <th>LEVEL</th>
 
               <th class="text-center">AKSI</th>
             </tr>
@@ -58,10 +59,10 @@ $data = mysqli_fetch_array($sql_per_id); { ?>
                 <td><?php echo $data['uraian']; ?></td>
                 <td class="text-center">
                   </a>
-                  <a href="?page=edit-baru&kode=<?php echo $data['id_disposisi']; ?>" title="Edit" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
-                  <a href="?page=del-baru&kode=<?php echo $data['id_disposisi']; ?>" onclick="return confirm('Apakah anda yakin hapus data ini ?')" title="Hapus" class="btn btn-danger btn-sm">
+                  <a href="?page=edit-disposisi&kode=<?php echo $data['id_disposisi']; ?>" title="Edit" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
+                  <a href="?page=del-disposisi&kode=<?php echo $data['id_disposisi']; ?>" onclick="return confirm('Apakah anda yakin hapus data ini ?')" title="Hapus" class="btn btn-danger btn-sm">
                     <i class="fa fa-trash"></i> </a>
-                  <a href="admin\cetak\baru\cetak_con_baru.php?id_berkas=<?= $data['id_disposisi'] ?>" target="_blank" title="Cetak" class="btn btn-success btn-sm">
+                  <a href="admin\cetak\disposisi\cetak_con_disposisi.php?id_berkas=<?= $data['id_disposisi'] ?>" target="_blank" title="Cetak" class="btn btn-success btn-sm">
                     <i class="fa fa-print"></i>
                   </a>
                   </a>
