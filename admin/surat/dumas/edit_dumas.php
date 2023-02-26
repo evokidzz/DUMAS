@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_GET['kode'])) {
-    $sql_cek = "SELECT * FROM tb_salinan WHERE id_salinan='" . $_GET['kode'] . "'";
+    $sql_cek = "SELECT * FROM tb_dumas WHERE id_dumas='" . $_GET['kode'] . "'";
     $query_cek = mysqli_query($koneksi, $sql_cek);
     $data_cek = mysqli_fetch_array($query_cek, MYSQLI_BOTH);
 }
@@ -12,74 +12,74 @@ if (isset($_GET['kode'])) {
 <div class="card card-dark">
     <div class="card-header">
         <h3 class="card-title">
-            <i class="fa fa-edit"></i> Ubah Data Berkas Salinan
+            <i class="fa fa-edit"></i> Ubah Data Berkas dumas
         </h3>
     </div>
     <form action="" method="post" enctype="multipart/form-data">
         <div class="card-body">
 
-            <input type='hidden' class="form-control" name="id_salinan" value="<?php echo $data_cek['id_salinan']; ?>" readonly />
+            <input type='hidden' class="form-control" name="id_dumas" value="<?php echo $data_cek['id_dumas']; ?>" readonly />
 
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label" for="no_pel">NO.PELAYAN</label>
+                <label class="col-sm-2 col-form-label" for="no_dumas">NO.DUMAS</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="no_pel" name="no_pel" value="<?php echo $data_cek['no_pel']; ?>" readonly>
+                    <input type="text" class="form-control" id="no_dumas" name="no_dumas" value="<?php echo $data_cek['no_dumas']; ?>" readonly>
                 </div>
             </div>
 
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">TGL.PELAYANAN</label>
+                <label class="col-sm-2 col-form-label">TANGGAL</label>
                 <div class="col-md-6">
-                    <input type="date" class="form-control" id="tgl_pel" name="tgl_pel" value="<?php echo $data_cek['tgl_pel']; ?>">
+                    <input type="date" class="form-control" id="tanggal" name="tanggal" value="<?php echo $data_cek['tanggal']; ?>">
                 </div>
             </div>
 
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label" for="nop">NOP</label>
+                <label class="col-sm-2 col-form-label" for="perihal">PERIHAL</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="nop" name="nop" value="<?php echo $data_cek['nop']; ?>">
+                    <input type="text" class="form-control" id="perihal" name="perihal" value="<?php echo $data_cek['perihal']; ?>">
                 </div>
             </div>
 
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label" for="nik">NIK/NPWP</label>
+                <label class="col-sm-2 col-form-label" for="nama_pelapor">NAMA PELAPOR</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" id="nama_pelapor" name="nama_pelapor" value="<?php echo $data_cek['nama_pelapor']; ?>">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="ktp">KTP</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="nik" name="nik" value="<?php echo $data_cek['nik']; ?>">
+                    <input type="text" class="form-control" id="ktp" name="ktp" value="<?php echo $data_cek['ktp']; ?>">
+                </div>
+            </div>
+            
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="nama_terlapor">NAMA TERLAPOR</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" id="nama_terlapor" name="nama_terlapor" value="<?php echo $data_cek['nama_terlapor']; ?>">
                 </div>
             </div>
 
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label" for="nama">NAMA</label>
+                <label class="col-sm-2 col-form-label" for="pangkat_terlapor">PANGKAT</label>
                 <div class="col-md-6">
-                    <input type="text" class="form-control" id="nama" name="nama" value="<?php echo $data_cek['nama']; ?>">
+                    <input type="text" class="form-control" id="pangkat_terlapor" name="pangkat_terlapor" value="<?php echo $data_cek['pangkat_terlapor']; ?>">
                 </div>
             </div>
 
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label" for="alamat">ALAMAT</label>
+                <label class="col-sm-2 col-form-label" for="asal_dinas">ASAL DINAS</label>
                 <div class="col-md-6">
-                    <input type="text" class="form-control" id="alamat" name="alamat" value="<?php echo $data_cek['alamat']; ?>">
+                    <input type="text" class="form-control" id="asal_dinas" name="asal_dinas" value="<?php echo $data_cek['asal_dinas']; ?>">
                 </div>
             </div>
 
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label" for="letak_op">LETAK OP</label>
-                <div class="col-md-6">
-                    <input type="text" class="form-control" id="letak_op" name="letak_op" value="<?php echo $data_cek['letak_op']; ?>">
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label" for="kel">KELURAHAN</label>
-                <div class="col-md-6">
-                    <input type="text" class="form-control" id="kel" name="kel" value="<?php echo $data_cek['kel']; ?>">
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label" for="kec">KECAMATAN</label>
-                <div class="col-md-6">
-                    <input type="text" class="form-control" id="kec" name="kec" value="<?php echo $data_cek['kec']; ?>">
+                <label class="col-sm-2 col-form-label" for="uraian">URAIAN</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="uraian" name="uraian" value="<?php echo $data_cek['uraian']; ?>">
                 </div>
             </div>
 
@@ -94,7 +94,7 @@ if (isset($_GET['kode'])) {
         </div>
         <div class="card-footer">
             <input type="submit" name="Ubah" value="Ubah" class="btn btn-info">
-            <a href="?page=data-salinan" title="Kembali" class="btn btn-secondary">Batal</a>
+            <a href="?page=data-dumas" title="Kembali" class="btn btn-secondary">Batal</a>
         </div>
     </form>
 </div>
@@ -105,18 +105,17 @@ if (isset($_GET['kode'])) {
 
 
 if (isset($_POST['Ubah'])) {
-    $sql_ubah = "UPDATE tb_salinan SET 
-    no_pel='" . $_POST['no_pel'] . "', 
-    tgl_pel='" . $_POST['tgl_pel'] . "', 
-    nop='" . $_POST['nop'] . "', 
-    nik='" . $_POST['nik'] . "',
-    nama='" . $_POST['nama'] . "', 
-    alamat='" . $_POST['alamat'] . "', 
-    kec='" . $_POST['kec'] . "',   
-    kel='" . $_POST['kel'] . "',
-    kec='" . $_POST['kec'] . "',    
-    ket='" . $_POST['ket'] . "'
-    WHERE id_salinan='" . $_POST['id_salinan'] . "'";
+    $sql_ubah = "UPDATE tb_dumas SET 
+    no_dumas='" . $_POST['no_dumas'] . "', 
+    tanggal='" . $_POST['tanggal'] . "', 
+    perihal='" . $_POST['perihal'] . "', 
+    nama_pelapor='" . $_POST['nama_pelapor'] . "',
+    no_ktp='" . $_POST['no_ktp'] . "', 
+    nama_terlapor='" . $_POST['nama_terlapor'] . "', 
+    pangkat_terlapor='" . $_POST['pangkat_terlapor'] . "',      
+    uraian='" . $_POST['uraian'] . "'
+    level='" . $_POST['level'] . "'
+    WHERE id_dumas='" . $_POST['id_dumas'] . "'";
     $query_ubah = mysqli_query($koneksi, $sql_ubah);
     mysqli_close($koneksi);
 
@@ -125,14 +124,14 @@ if (isset($_POST['Ubah'])) {
         echo "<script>
       Swal.fire({title: 'Ubah Data Berhasil',text: '',icon: 'success',confirmButtonText: 'OK'
       }).then((result) => {if (result.value)
-        {window.location = 'index.php?page=data-salinan';
+        {window.location = 'index.php?page=data-dumas';
         }
       })</script>";
     } else {
         echo "<script>
       Swal.fire({title: 'Ubah Data Gagal',text: '',icon: 'error',confirmButtonText: 'OK'
       }).then((result) => {if (result.value)
-        {window.location = 'index.php?page=data-salinan';
+        {window.location = 'index.php?page=data-dumas';
         }
       })</script>";
     }

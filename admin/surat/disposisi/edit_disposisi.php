@@ -18,7 +18,7 @@ if (isset($_GET['kode'])) {
     <form action="" method="post" enctype="multipart/form-data">
         <div class="card-body">
 
-            <input type='hidden' class="form-control" name="id_disposisi" value="<?php echo $data_cek['id_diposisi']; ?>" readonly />
+            <input type='hidden' class="form-control" name="id_disposisi" value="<?php echo $data_cek['id_disposisi']; ?>" readonly />
 
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label" for="no_dumas">NO.DUMAS</label>
