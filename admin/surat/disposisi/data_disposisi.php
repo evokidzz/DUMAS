@@ -1,13 +1,13 @@
 <?php
 $id = @$_GET['id'];
-$sql_per_id = mysqli_query($koneksi, "SELECT * FROM tb_baru WHERE id_baru = '$id'") or die($db->error);
+$sql_per_id = mysqli_query($koneksi, "SELECT * FROM tb_disposisi WHERE id_disposisi = '$id'") or die($db->error);
 $data = mysqli_fetch_array($sql_per_id); { ?>
 
 
   <div class="card card-dark">
     <div class="card-header">
       <h3 class="card-title">
-        <i class="fa fa-table"></i> Data Berkas Daftar Baru
+        <i class="fa fa-table"></i> Data Berkas disposisi
       </h3>
     </div>
 
@@ -41,7 +41,7 @@ $data = mysqli_fetch_array($sql_per_id); { ?>
 
             <?php
             $no = 1;
-            $sql = $koneksi->query("SELECT * FROM tb_baru ORDER BY id_baru DESC");
+            $sql = $koneksi->query("SELECT * FROM tb_baru ORDER BY id_disposisi DESC");
             while ($data = $sql->fetch_assoc()) {
             ?>
 
@@ -58,10 +58,10 @@ $data = mysqli_fetch_array($sql_per_id); { ?>
                 <td><?php echo $data['uraian']; ?></td>
                 <td class="text-center">
                   </a>
-                  <a href="?page=edit-baru&kode=<?php echo $data['id_baru']; ?>" title="Edit" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
-                  <a href="?page=del-baru&kode=<?php echo $data['id_baru']; ?>" onclick="return confirm('Apakah anda yakin hapus data ini ?')" title="Hapus" class="btn btn-danger btn-sm">
+                  <a href="?page=edit-baru&kode=<?php echo $data['id_disposisi']; ?>" title="Edit" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
+                  <a href="?page=del-baru&kode=<?php echo $data['id_disposisi']; ?>" onclick="return confirm('Apakah anda yakin hapus data ini ?')" title="Hapus" class="btn btn-danger btn-sm">
                     <i class="fa fa-trash"></i> </a>
-                  <a href="admin\cetak\baru\cetak_con_baru.php?id_berkas=<?= $data['id_baru'] ?>" target="_blank" title="Cetak" class="btn btn-success btn-sm">
+                  <a href="admin\cetak\baru\cetak_con_baru.php?id_berkas=<?= $data['id_disposisi'] ?>" target="_blank" title="Cetak" class="btn btn-success btn-sm">
                     <i class="fa fa-print"></i>
                   </a>
                   </a>
