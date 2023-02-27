@@ -1,13 +1,13 @@
 <?php
 $id = @$_GET['id'];
-$sql_per_id = mysqli_query($koneksi, "SELECT * FROM tb_wp WHERE nik = '$id'") or die($db->error);
+$sql_per_id = mysqli_query($koneksi, "SELECT * FROM tb_peldum WHERE nik = '$id'") or die($db->error);
 $data = mysqli_fetch_array($sql_per_id); { ?>
 
 
   <div class="card card-dark">
     <div class="card-header">
       <h3 class="card-title">
-        <i class="fa fa-table"></i> Data Wajib Pajak
+        <i class="fa fa-table"></i> Data Pelapor Dumas
       </h3>
     </div>
 
@@ -41,7 +41,7 @@ $data = mysqli_fetch_array($sql_per_id); { ?>
 
             <?php
             $no = 1;
-            $sql = $koneksi->query("SELECT * FROM tb_wp ORDER BY nik DESC");
+            $sql = $koneksi->query("SELECT * FROM tb_peldum ORDER BY nik DESC");
             while ($data = $sql->fetch_assoc()) {
             ?>
 
