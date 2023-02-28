@@ -77,11 +77,15 @@
       </div>
 
       <div class="form-group row">
-        <label class="col-sm-2 col-form-label" for="ket">KETERANGAN</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" id="ket" name="ket" placeholder="PROSES LIDIK ATAU SELESAI" required>
-        </div>
-      </div>
+				<label class="col-sm-2 col-form-label">KEPUTUSAN</label>
+				<div class="col-sm-4">
+					<select name="keputusan" id="keputusan" class="form-control">
+						<option>- Pilih -</option>
+						<option>Proses Lidik</option>
+						<option>Selesai</option>
+					</select>
+				</div>
+			</div>
 
 
     </div>
