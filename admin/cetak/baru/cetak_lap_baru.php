@@ -18,26 +18,26 @@ class PDF extends FPDF
     function Header()
     {
         // Logo
-        $this->Image('../../../dist/img/logo_banjar.png', 73, 10, 23);
+        $this->Image('../../../dist/img/logo_propam.png', 73, 10, 23);
         // Arial bold 15
         $this->SetFont('Arial', '', 15);
         // Move to the right
         $this->Cell(25);
 
         // Title
-        $this->text(117, 15, 'PEMERINTAH KAB.BANJAR');
+        $this->text(117, 15, 'KEPOLISIAN DAERAH KALIMANTAN SELATAN');
 
         $this->SetFont('Arial', 'B', 20);
-        $this->text(98, 22, 'BADAN PENDAPATAN DAERAH');
+        $this->text(98, 22, 'BIDANG PROFESI DAN PENGAMANAN');
 
 
         // Alamat
         $this->SetFont('Arial', '', 12);
-        $this->text(110, 28, 'Jalan Pangeran Hidayatullah No.1 Martapura ');
-        $this->text(115, 33, 'Kalimantan Selatan Kode Pos 70611');
+        $this->text(110, 28, 'Jl. S. Parman No.16, Antasan Besar ');
+        $this->text(115, 33, 'Kalimantan Selatan Kode Pos 70123');
 
-        $this->SetFont('Arial', 'B', 12);
-        $this->text(103, 38, 'Telepon (0511) 4721358, Faksimile (0511) 4721027');
+        // $this->SetFont('Arial', 'B', 12);
+        // $this->text(103, 38, 'Telepon (0511) 4721358, Faksimile (0511) 4721027');
 
         // Line break
         $this->Ln(20);
@@ -62,8 +62,6 @@ class PDF extends FPDF
 }
 
 
-
-
 // Instanciation of inherited class
 $pdf = new PDF('L', 'mm', array(230, 297));
 $pdf->AddPage();
@@ -74,7 +72,7 @@ $yi = 53;
 $ya = 55;;
 
 $pdf->SetFont('Arial', 'B', 15);
-$pdf->Text(100, 50, 'LAPORAN DATA BERKAS DAFTAR BARU');
+$pdf->Text(100, 50, 'LAPORAN DATA BERKAS LAPORAN BARU');
 
 
 
@@ -82,16 +80,14 @@ $pdf->SetFont('Arial', 'B', 8);
 $pdf->setFillColor(222, 222, 222);
 $pdf->setXY(3, 53);
 $pdf->CELL(10, 6, 'NO', 1, 0, 'C', 1);
-$pdf->CELL(27, 6, 'NO.PELAYAN', 1, 0, 'C', 1);
-$pdf->CELL(30, 6, 'TGL.PELAYANAN', 1, 0, 'C', 1);
-$pdf->CELL(35, 6, 'NOP', 1, 0, 'C', 1);
-$pdf->CELL(25, 6, 'NIK', 1, 0, 'C', 1);
-$pdf->CELL(45, 6, 'NAMA', 1, 0, 'C', 1);
-$pdf->CELL(45, 6, 'ALAMAT', 1, 0, 'C', 1);
-$pdf->CELL(45, 6, 'LETAK OP', 1, 0, 'C', 1);
-$pdf->CELL(30, 6, 'KET.', 1, 0, 'C', 1);
-
-
+$pdf->CELL(27, 6, 'NO.DUMAS', 1, 0, 'C', 1);
+$pdf->CELL(30, 6, 'TANGGAL', 1, 0, 'C', 1);
+$pdf->CELL(35, 6, 'PERIHAL', 1, 0, 'C', 1);
+$pdf->CELL(25, 6, 'NAMA PELAPOR', 1, 0, 'C', 1);
+$pdf->CELL(45, 6, 'NAMA TERLAPOR', 1, 0, 'C', 1);
+$pdf->CELL(45, 6, 'PANGKAT', 1, 0, 'C', 1);
+$pdf->CELL(45, 6, 'ASAL DINAS', 1, 0, 'C', 1);
+$pdf->CELL(30, 6, 'URAIAN.', 1, 0, 'C', 1);
 
 
 
@@ -105,14 +101,14 @@ while ($data = mysqli_fetch_array($sql)) {
     $pdf->setFont('Times', '', 8);
     $pdf->setFillColor(255, 255, 255);
     $pdf->CELL(10, 6, $no, 1, 0, 'C', 1);
-    $pdf->CELL(27, 6, $data['no_pel'], 1, 0, 'C', 1);
-    $pdf->CELL(30, 6, $data['tgl_pel'], 1, 0, 'C', 1);
-    $pdf->CELL(35, 6, $data['nop'], 1, 0, 'C', 1);
-    $pdf->CELL(25, 6, $data['nik'], 1, 0, 'C', 1);
-    $pdf->CELL(45, 6, $data['nama'], 1, 0, 'C', 1);
-    $pdf->CELL(45, 6, $data['alamat'], 1, 0, 'C', 1);
-    $pdf->CELL(45, 6, $data['letak_op'], 1, 0, 'C', 1);
-    $pdf->CELL(30, 6, $data['ket'], 1, 0, 'C', 1);
+    $pdf->CELL(27, 6, $data['no_dumas'], 1, 0, 'C', 1);
+    $pdf->CELL(30, 6, $data['tanggal'], 1, 0, 'C', 1);
+    $pdf->CELL(35, 6, $data['perihal'], 1, 0, 'C', 1);
+    $pdf->CELL(25, 6, $data['nama_pelapor'], 1, 0, 'C', 1);
+    $pdf->CELL(45, 6, $data['nama_terlapor'], 1, 0, 'C', 1);
+    $pdf->CELL(45, 6, $data['pangkat_terlapor'], 1, 0, 'C', 1);
+    $pdf->CELL(45, 6, $data['asal_dinas'], 1, 0, 'C', 1);
+    $pdf->CELL(30, 6, $data['uraian'], 1, 0, 'C', 1);
 
     $ya = $ya + $row;
     $no++;
@@ -146,20 +142,18 @@ $bln_list = array(
 
 
 
-    
-
 # footer
 $pdf->Ln();
 $pdf->SetFont('Times', '', 12);
 $pdf->SetX(118);
 
-$pdf->MultiCell(250, 12, 'Martapura, ' . date('d') . ' ' . $bln_list[date('m')] . ' ' . date('Y'), 0, 'C');
+$pdf->MultiCell(250, 12, 'Banjarmasin, ' . date('d') . ' ' . $bln_list[date('m')] . ' ' . date('Y'), 0, 'C');
 
     $pdf->setFont('Times', '', 12);
     $pdf->MultiCell(465, 0, 'Pembuat data,', 0, 'C');
-    $pdf->MultiCell(465, 30, $nama, 0, 'C');
+    $pdf->MultiCell(465, 30, 'SUBBAG YANDUAN', 0, 'C');
 
 $pdf->AliasNbPages();
 ob_clean();
-$pdf->Output('I', 'Laporan Data Daftar Baru.PDF');
+$pdf->Output('I', 'Laporan Data Laporan Baru.PDF');
 }

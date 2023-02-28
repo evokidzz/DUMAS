@@ -1,13 +1,13 @@
 <?php
 $id = @$_GET['id'];
-$sql_per_id = mysqli_query($koneksi, "SELECT * FROM tb_baru WHERE id_baru = '$id'") or die($db->error);
+$sql_per_id = mysqli_query($koneksi, "SELECT * FROM tb_disposisi WHERE id_disposisi = '$id'") or die($db->error);
 $data = mysqli_fetch_array($sql_per_id); { ?>
 
 
   <div class="card card-dark">
     <div class="card-header">
       <h3 class="card-title">
-        <i class="fa fa-table"></i> Data Berkas Laporan Baru
+        <i class="fa fa-table"></i> Data Berkas Disposisi
       </h3>
     </div>
 
@@ -16,9 +16,9 @@ $data = mysqli_fetch_array($sql_per_id); { ?>
     <div class="card-body">
       <div class="table-responsive">
         <div>
-          <a href="?page=data-baru" class="btn btn-primary">
-            <i class="fas fa-long-arrow-alt-left"></i> Menu Data Berkas Laporan Baru</a>
-          <a href="admin\cetak\baru\cetak_lap_baru.php" target="_blank" title="Cetak" class="btn btn-success"><i class="fa fa-print"></i> Cetak Laporan</a>
+          <a href="?page=data-disposisi" class="btn btn-primary">
+            <i class="fas fa-long-arrow-alt-left"></i> Menu Data Berkas Disposisi</a>
+          <a href="admin\cetak\disposisi\cetak_lap_disposisi.php" target="_blank" title="Cetak" class="btn btn-success"><i class="fa fa-print"></i> Cetak Laporan</a>
         </div>
 
       </div>
@@ -36,13 +36,14 @@ $data = mysqli_fetch_array($sql_per_id); { ?>
               <th>PANGKAT</th>
               <th>ASAL DINAS</th>
               <th>URAIAN</th>
+              <th>LEVEL</th>
           </tr>
         </thead>
         <tbody>
 
           <?php
           $no = 1;
-          $sql = $koneksi->query("SELECT * FROM tb_baru ORDER BY id_baru DESC");
+          $sql = $koneksi->query("SELECT * FROM tb_disposisi ORDER BY id_disposisi DESC");
           while ($data = $sql->fetch_assoc()) {
           ?>
 
@@ -55,6 +56,7 @@ $data = mysqli_fetch_array($sql_per_id); { ?>
                 <td><?php echo $data['pangkat_terlapor']; ?></td>
                 <td><?php echo $data['asal_dinas']; ?></td>
                 <td><?php echo $data['uraian']; ?></td>
+                <td><?php echo $data['level']; ?></td>
 
     </div>
 

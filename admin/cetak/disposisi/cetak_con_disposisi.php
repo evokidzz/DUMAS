@@ -7,15 +7,15 @@ if (isset($_GET['id_berkas'])) {
     die("Error. No ID Selected!");
 }
 include "../../../inc/koneksi.php";
-$query    = mysqli_query($koneksi, "SELECT * FROM tb_mutasi WHERE id_mutasi='$id_berkas'");
+$query    = mysqli_query($koneksi, "SELECT * FROM tb_disposisi WHERE id_disposisi='$id_berkas'");
 $data    = mysqli_fetch_array($query); ?>
 
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>TANDA TERIMA MUTASI</title>
-    <link rel="icon" href="../../../dist/img/logo_banjar.png">
+    <title>TANDA TERIMA BERKAS DISPOSISI</title>
+    <link rel="icon" href="../../../dist/img/logo_propam.png">
     <style type="text/css">
         table {
             border-style: double;
@@ -60,14 +60,14 @@ $data    = mysqli_fetch_array($query); ?>
     <center>
         <table width="550">
             <tr>
-                <td><img src="../../../dist/img/logo_banjar.png" width="80" height="90"></td>
+                <td><img src="../../../dist/img/logo_propam.png" width="80" height="90"></td>
                 <td>
                     <center>
-                        <font size="4">PEMERINTAH KAB.BANJAR</font><br>
-                        <font size="5"><b>BADAN PENDAPATAN DAERAH</b></font><br>
-                        <font size="3"><i>Jalan Pangeran Hidayatullah No.1 Martapura</i></font>
-                        <font size="3"><i>Kalimantan Selatan Kode Pos 70611</i></font>
-                        <font size="3"><i>Telepon (0511) 4721358, Faksimile (0511) 4721027</i></font>
+                        <font size="4">KEPOLISIAN DAERAH KALIMANTAN SELATAN</font><br>
+                        <font size="5"><b>BIDANG PROFESI DAN PENGAMANAN/b></font><br>
+                        <font size="3"><i>Jl. S. Parman No.16, Antasan Besar</i></font>
+                        <font size="3"><i>Kalimantan Selatan Kode Pos 70123</i></font>
+                        <!-- <font size="3"><i>Telepon (0511) 4721358, Faksimile (0511) 4721027</i></font> -->
                     </center>
                 </td>
             </tr>
@@ -101,17 +101,17 @@ $data    = mysqli_fetch_array($query); ?>
             </table>
         </table>
         <table>
-            <strong style="font-size: 20px;"><b><u>TANDA TERIMA MUTASI</u></b></strong>
+            <strong style="font-size: 20px;"><b><u>TANDA TERIMA LAPORAN DISPOSISI</u></b></strong>
 
 
         </table>
         <table width="550">
             <tr class="text3">
                 <td width="150">
-                    <font size="3"> <strong>NO.PELAYANAN</strong> </font>
+                    <font size="3"> <strong>NO.DUMAS</strong> </font>
                 </td>
                 <td>
-                    <font size="3">: <b><?php echo $data['no_pel']; ?></font>
+                    <font size="3">: <b><?php echo $data['no_dumas']; ?></font>
                 </td>
             </tr>
             <tr class="text3">
@@ -119,71 +119,63 @@ $data    = mysqli_fetch_array($query); ?>
                     <font size="3">JENIS PELAYANAN</font>
                 </td>
                 <td>
-                    <font size="3">: MUTASI</font>
+                    <font size="3">: DISPOSISI </font>
                 </td>
             </tr>
             <tr class="text3">
                 <td width="100">
-                    <font size="3">NOP</font>
+                    <font size="3">PERIHAL</font>
                 </td>
                 <td>
-                    <font size="3">: <?php echo $data['nop']; ?></font>
+                    <font size="3">: <?php echo $data['PERIHAL']; ?></font>
                 </td>
             </tr>
         </table>
         </table>
         <table width="550">
             <td align="center">
-                <font size="3"><b>DATA WAJIB/OBJEK PAJAK DAN KETERANGAN</b>.</font>
+                <font size="3"><b>DATA PELAPOR DAN KETERANGAN</b>.</font>
             </td>
         </table>
         <table width="550">
             <tr class="text3">
                 <td width="150">
-                    <font size="3">NAMA WP</font>
+                    <font size="3">NAMA PELAPOR</font>
                 </td>
                 <td>
-                    <font size="3">: <?php echo $data['nama']; ?></font>
+                    <font size="3">: <?php echo $data['nama_pelapor']; ?></font>
                 </td>
             </tr>
             <tr class="text3">
                 <td width="100">
-                    <font size="3">ALAMAT WP</font>
+                    <font size="3">NAMA TERLAPOR</font>
                 </td>
                 <td>
-                    <font size="3">: <?php echo $data['alamat']; ?></font>
+                    <font size="3">: <?php echo $data['nama_terlapor']; ?></font>
                 </td>
             </tr>
             <tr class="text3">
                 <td width="100">
-                    <font size="3">LETAK OBJEK</font>
+                    <font size="3">PANGKAT</font>
                 </td>
                 <td>
-                    <font size="3">: <?php echo $data['letak_op']; ?></font>
+                    <font size="3">: <?php echo $data['pangkat_terlapor']; ?></font>
                 </td>
             </tr>
             <tr class="text3">
                 <td width="100">
-                    <font size="3">KELURAHAN</font>
+                    <font size="3">ASAL DINAS</font>
                 </td>
                 <td>
-                    <font size="3">: <?php echo $data['kel']; ?></font>
+                    <font size="3">: <?php echo $data['asal_dinas']; ?></font>
                 </td>
             </tr>
             <tr class="text3">
                 <td width="100">
-                    <font size="3">KECAMATAN</font>
+                    <font size="3">URAIAN</font>
                 </td>
                 <td>
-                    <font size="3">: <?php echo $data['kec']; ?></font>
-                </td>
-            </tr>
-            <tr class="text3">
-                <td width="100">
-                    <font size="3">KETERANGAN</font>
-                </td>
-                <td>
-                    <font size="3">: <?php echo $data['ket']; ?></font>
+                    <font size="3">: <?php echo $data['uraian']; ?></font>
                 </td>
             </tr>
         </table>
@@ -196,7 +188,7 @@ $data    = mysqli_fetch_array($query); ?>
         <table width="550">
             <tr>
                 <td width="350"><br><br><br><br></td>
-                <td class="text"> <strong style="font-size: 15px;">Petugas Penerima Berkas,<br><br><br><br><?php echo $data['nama_pengguna']; ?></td>
+                <td class="text"> <strong style="font-size: 15px;">Petugas Penerima Berkas,<br><br><br><br>SUBBAG YANDUAN</td>
             </tr>
         </table>
     </center>
