@@ -90,16 +90,15 @@ if (isset($_GET['kode'])) {
                         <option value="">-- Pilih Level --</option>
                         <?php
                         //menhecek data yg dipilih sebelumnya
-                        if ($data_cek['level'] == "Administrator") echo "<option value='Administrator' selected>Administrator</option>";
-                        else echo "<option value='Administrator'>Administrator</option>";
+                        if ($data_cek['level'] == "Subbid Paminal") echo "<option value='Subbid Paminal' selected>Subbid Paminal</option>";
+                        else echo "<option value='Subbid Paminal'>Subbid Paminal</option>";
 
-                        if ($data_cek['level'] == "Sekretaris") echo "<option value='Sekretaris' selected>Sekretaris</option>";
-                        else echo "<option value='Sekretaris'>Sekretaris</option>";
+                        if ($data_cek['level'] == "Subbid Provos") echo "<option value='Subbid Provos' selected>Subbid Provos</option>";
+                        else echo "<option value='Subbid Provos'>Subbid Provos</option>";
                         ?>
                     </select>
                 </div>
             </div>
-
 
         </div>
         <div class="card-footer">

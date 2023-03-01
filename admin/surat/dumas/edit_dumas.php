@@ -84,9 +84,19 @@ if (isset($_GET['kode'])) {
             </div>
 
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label" for="ket">KETERANGAN</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" id="ket" name="ket" value="<?php echo $data_cek['ket']; ?>">
+                <label class="col-sm-2 col-form-label">Level</label>
+                <div class="col-sm-4">
+                    <select name="keputusan" id="keputusan" class="form-control">
+                        <option value="">-- Pilih Keputusan --</option>
+                        <?php
+                        //menhecek data yg dipilih sebelumnya
+                        if ($data_cek['level'] == "Proses Lidik") echo "<option value='Proses Lidik' selected>Proses Lidik</option>";
+                        else echo "<option value='Proses Lidik'>Proses Lidik</option>";
+
+                        if ($data_cek['level'] == "Selesai") echo "<option value='Selesai' selected>Selesai</option>";
+                        else echo "<option value='Selesai'>Selesai</option>";
+                        ?>
+                    </select>
                 </div>
             </div>
 
@@ -114,7 +124,7 @@ if (isset($_POST['Ubah'])) {
     nama_terlapor='" . $_POST['nama_terlapor'] . "', 
     pangkat_terlapor='" . $_POST['pangkat_terlapor'] . "',      
     uraian='" . $_POST['uraian'] . "'
-    level='" . $_POST['level'] . "'
+    keputusan='" . $_POST['keputusan'] . "'
     WHERE id_dumas='" . $_POST['id_dumas'] . "'";
     $query_ubah = mysqli_query($koneksi, $sql_ubah);
     mysqli_close($koneksi);

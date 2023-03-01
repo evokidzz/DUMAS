@@ -7,14 +7,14 @@ if (isset($_GET['id_berkas'])) {
     die("Error. No ID Selected!");
 }
 include "../../../inc/koneksi.php";
-$query    = mysqli_query($koneksi, "SELECT * FROM tb_hapus WHERE id_hapus='$id_berkas'");
+$query    = mysqli_query($koneksi, "SELECT * FROM tb_hasil WHERE id_hasil='$id_berkas'");
 $data    = mysqli_fetch_array($query); ?>
 
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>TANDA TERIMA BERKAS PENCABUTAN LAPORAN</title>
+    <title>TANDA TERIMA BERKAS HASIL PENYELIDIKAN</title>
     <link rel="icon" href="../../../dist/img/logo_propam.png">
     <style type="text/css">
         table {
@@ -101,7 +101,7 @@ $data    = mysqli_fetch_array($query); ?>
             </table>
         </table>
         <table>
-            <strong style="font-size: 20px;"><b><u>TANDA TERIMA LAPORAN PENCABUTAN LAPORAN</u></b></strong>
+            <strong style="font-size: 20px;"><b><u>TANDA TERIMA LAPORAN HASIL PENYELIDIKAN</u></b></strong>
 
 
         </table>
@@ -119,7 +119,7 @@ $data    = mysqli_fetch_array($query); ?>
                     <font size="3">JENIS PELAYANAN</font>
                 </td>
                 <td>
-                    <font size="3">: PENCABUTAN LAPORAN</font>
+                    <font size="3">: HASIL PENYELIDIKAN</font>
                 </td>
             </tr>
             <tr class="text3">

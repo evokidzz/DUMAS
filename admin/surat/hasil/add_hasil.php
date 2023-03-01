@@ -91,7 +91,7 @@
     </div>
     <div class="card-footer">
       <input type="submit" name="Simpan" value="Simpan" class="btn btn-info">
-      <a href="?page=data-hapus" title="Kembali" class="btn btn-secondary">Batal</a>
+      <a href="?page=data-hasil" title="Kembali" class="btn btn-secondary">Batal</a>
     </div>
   </form>
 </div>
@@ -102,7 +102,7 @@ if (isset($_POST['Simpan'])) {
 
   $validatesql ="SELECT "
 
-  $sql_simpan = "INSERT INTO tb_hapus (no_dumas,tanggal,perihal,nama_pelapor,no_ktp,nama_terlapor,pangkat_terlapor,asal_dinas,uraian,ket) VALUES (
+  $sql_simpan = "INSERT INTO tb_hasil (no_dumas,tanggal,perihal,nama_pelapor,no_ktp,nama_terlapor,pangkat_terlapor,asal_dinas,uraian,ket) VALUES (
     '" . $_POST['no_dumas'] . "',
     '" . $_POST['tanggal'] . "',
     '" . $_POST['perihal'] . "',
@@ -112,7 +112,7 @@ if (isset($_POST['Simpan'])) {
     '" . $_POST['pangkat_terlapor'] . "',
     '" . $_POST['asal_dinas'] . "',
     '" . $_POST['uraian'] . "',
-    '" . $_POST['ket'] . "')";
+    '" . $_POST['keputusan'] . "')";
 
   if ($_POST['no_dumas']->rowCount() > 0) {
     echo "No.dumas Sdh Ada";
@@ -125,14 +125,14 @@ if (isset($_POST['Simpan'])) {
     echo "<script>
 		  Swal.fire({title: 'Tambah Data Berhasil',text: '',icon: 'success',confirmButtonText: 'OK'
 		  }).then((result) => {if (result.value){
-			  window.location = 'index.php?page=data-hapus';
+			  window.location = 'index.php?page=data-hasil';
 			  }
 		  })</script>";
   } else {
     echo "<script>
 		  Swal.fire({title: 'Tambah Data Gagal',text: '',icon: 'error',confirmButtonText: 'OK'
 		  }).then((result) => {if (result.value){
-			  window.location = 'index.php?page=add-hapus';
+			  window.location = 'index.php?page=add-hasil';
 			  }
 		  })</script>" . mysqli_errno($koneksi);
   }

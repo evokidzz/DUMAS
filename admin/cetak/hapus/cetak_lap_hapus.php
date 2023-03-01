@@ -71,7 +71,7 @@ $yi = 53;
 $ya = 55;;
 
 $pdf->SetFont('Arial', 'B', 15);
-$pdf->Text(100, 50, 'LAPORAN DATA BERKAS LAPORAN PENCABUTAN LAPORAN');
+$pdf->Text(100, 50, 'LAPORAN DATA BERKAS PENCABUTAN LAPORAN');
 
 
 
@@ -156,5 +156,5 @@ $pdf->MultiCell(250, 12, 'Banjarmasin, ' . date('d') . ' ' . $bln_list[date('m')
 
 $pdf->AliasNbPages();
 ob_clean();
-$pdf->Output('I', 'Laporan Data Laporan Pencabutan Laporan.PDF');
+$pdf->Output('I', 'Laporan Data Pencabutan Laporan.PDF');
 }

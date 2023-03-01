@@ -112,7 +112,7 @@ if (isset($_POST['Simpan'])) {
     '" . $_POST['pangkat_terlapor'] . "',
     '" . $_POST['asal_dinas'] . "',
     '" . $_POST['uraian'] . "',
-    '" . $_POST['ket'] . "')";
+    '" . $_POST['keputusan'] . "')";
 
   if ($_POST['no_dumas']->rowCount() > 0) {
     echo "No.Dumas Sdh Ada";

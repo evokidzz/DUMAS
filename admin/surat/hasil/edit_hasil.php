@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_GET['kode'])) {
-    $sql_cek = "SELECT * FROM tb_hapus WHERE id_hapus='" . $_GET['kode'] . "'";
+    $sql_cek = "SELECT * FROM tb_hasil WHERE id_hasil='" . $_GET['kode'] . "'";
     $query_cek = mysqli_query($koneksi, $sql_cek);
     $data_cek = mysqli_fetch_array($query_cek, MYSQLI_BOTH);
 }
@@ -12,7 +12,7 @@ if (isset($_GET['kode'])) {
 <div class="card card-dark">
     <div class="card-header">
         <h3 class="card-title">
-            <i class="fa fa-edit"></i> Ubah Data Pencabutan Laporan
+            <i class="fa fa-edit"></i> Ubah Data Hasil Penyelidikan
         </h3>
     </div>
     <form action="" method="post" enctype="multipart/form-data">
@@ -84,17 +84,26 @@ if (isset($_GET['kode'])) {
             </div>
 
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label" for="ket">KETERANGAN</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" id="ket" name="ket" value="<?php echo $data_cek['ket']; ?>">
+                <label class="col-sm-2 col-form-label">Level</label>
+                <div class="col-sm-4">
+                    <select name="keputusan" id="keputusan" class="form-control">
+                        <option value="">-- Pilih Keputusan --</option>
+                        <?php
+                        //menhecek data yg dipilih sebelumnya
+                        if ($data_cek['level'] == "Selesai") echo "<option value='Selesai' selected>Selesai</option>";
+                        else echo "<option value='Selesai'>Selesai</option>";
+
+                        if ($data_cek['level'] == "Sesuai Dengan Keputusan Hukuman") echo "<option value='Sesuai Dengan Keputusan Hukuman' selected>Sesuai Dengan Keputusan Hukuman</option>";
+                        else echo "<option value='Sesuai Dengan Keputusan Hukuman'>Sesuai Dengan Keputusan Hukuman</option>";
+                        ?>
+                    </select>
                 </div>
             </div>
-
 
         </div>
         <div class="card-footer">
             <input type="submit" name="Ubah" value="Ubah" class="btn btn-info">
-            <a href="?page=data-hapus" title="Kembali" class="btn btn-secondary">Batal</a>
+            <a href="?page=data-hasil" title="Kembali" class="btn btn-secondary">Batal</a>
         </div>
     </form>
 </div>
@@ -105,8 +114,8 @@ if (isset($_GET['kode'])) {
 
 
 if (isset($_POST['Ubah'])) {
-    $sql_ubah = "UPDATE tb_hapus SET 
-    no_hapus='" . $_POST['no_hapus'] . "', 
+    $sql_ubah = "UPDATE tb_hasil SET 
+    no_dumas ='" . $_POST['no_dumas'] . "', 
     tanggal='" . $_POST['tanggal'] . "', 
     perihal='" . $_POST['perihal'] . "', 
     nama_pelapor='" . $_POST['nama_pelapor'] . "',
@@ -114,8 +123,8 @@ if (isset($_POST['Ubah'])) {
     nama_terlapor='" . $_POST['nama_terlapor'] . "', 
     pangkat_terlapor='" . $_POST['pangkat_terlapor'] . "',      
     uraian='" . $_POST['uraian'] . "'
-    level='" . $_POST['level'] . "'
-    WHERE id_hapus='" . $_POST['id_hapus'] . "'";
+    ket='" . $_POST['ket'] . "'
+    WHERE id_hasil='" . $_POST['id_hasil'] . "'";
     $query_ubah = mysqli_query($koneksi, $sql_ubah);
     mysqli_close($koneksi);
 
@@ -124,14 +133,14 @@ if (isset($_POST['Ubah'])) {
         echo "<script>
       Swal.fire({title: 'Ubah Data Berhasil',text: '',icon: 'success',confirmButtonText: 'OK'
       }).then((result) => {if (result.value)
-        {window.location = 'index.php?page=data-hapus';
+        {window.location = 'index.php?page=data-hasil';
         }
       })</script>";
     } else {
         echo "<script>
       Swal.fire({title: 'Ubah Data Gagal',text: '',icon: 'error',confirmButtonText: 'OK'
       }).then((result) => {if (result.value)
-        {window.location = 'index.php?page=data-hapus';
+        {window.location = 'index.php?page=data-hasil';
         }
       })</script>";
     }

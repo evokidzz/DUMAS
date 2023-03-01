@@ -156,5 +156,5 @@ $pdf->MultiCell(250, 12, 'Banjarmasin, ' . date('d') . ' ' . $bln_list[date('m')
 
 $pdf->AliasNbPages();
 ob_clean();
-$pdf->Output('I', 'Laporan Data Laporan Perkembangan Dumas.PDF');
+$pdf->Output('I', 'Laporan Data Perkembangan Dumas.PDF');
 }
