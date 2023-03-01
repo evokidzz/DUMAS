@@ -30,7 +30,7 @@ class PDF extends FPDF
         // Title
         // $this->text(137, 20, 'LAPORAN REKAP');
         // $this->text(120, 26, 'SURAT KETERANGAN DOMISILI');
-        $this->text(117, 15, 'KEPOLISIAN DAERAH KALIMANTAN SELATAN');
+        $this->text(104, 15, 'KEPOLISIAN DAERAH KALIMANTAN SELATAN');
 
         $this->SetFont('Arial', 'B', 20);
         $this->text(98, 22, 'BIDANG PROFESI DAN PENGAMANAN');
@@ -38,20 +38,20 @@ class PDF extends FPDF
 
         // Alamat
         $this->SetFont('Arial', '', 12);
-        $this->text(110, 28, 'Jalan Pangeran Hidayatullah No.1 Martapura ');
-        $this->text(115, 33, 'Kalimantan Selatan Kode Pos 70611');
+        $this->text(130, 28, 'Jl. S. Parman No.16, Antasan Besar ');
+        $this->text(129, 33, 'Kalimantan Selatan Kode Pos 70123');
 
-        $this->SetFont('Arial', 'B', 12);
-        $this->text(103, 38, 'Telepon (0511) 4721358, Faksimile (0511) 4721027');
+        // $this->SetFont('Arial', 'B', 12);
+        // $this->text(103, 38, 'Telepon (0511) 4721358, Faksimile (0511) 4721027');
 
         // Line break
         $this->Ln(20);
         $this->SetLineWidth(1);
 
         //garis
-        $this->Line(8, 43, 288, 43);
+        $this->Line(8, 34, 288, 34);
         $this->SetLineWidth(0);
-        $this->Line(8, 44, 288, 44);
+        $this->Line(8, 35, 288, 35);
     }
 
     // Halaman
@@ -79,15 +79,15 @@ $yi = 53;
 $ya = 55;;
 
 $pdf->SetFont('Arial', 'B', 15);
-$pdf->Text(125, 50, 'DATA WAJIB PAJAK');
+$pdf->Text(128, 42, 'DATA PELAPOR DUMAS');
 
 
 
 $pdf->SetFont('Arial', 'B', 8);
 $pdf->setFillColor(222, 222, 222);
-$pdf->setXY(8, 53);
+$pdf->setXY(7, 44);
 $pdf->CELL(10, 6, 'NO', 1, 0, 'C', 1);
-$pdf->CELL(25, 6, 'NIK/NPWP', 1, 0, 'C', 1);
+$pdf->CELL(25, 6, 'NIK', 1, 0, 'C', 1);
 $pdf->CELL(50, 6, 'NAMA', 1, 0, 'C', 1);
 $pdf->CELL(50, 6, 'ALAMAT', 1, 0, 'C', 1);
 $pdf->CELL(35, 6, 'DESA/KELURAHAN', 1, 0, 'C', 1);
@@ -98,7 +98,7 @@ $pdf->CELL(28, 6, 'PEKERJAAN', 1, 0, 'C', 1);
 
 
 
-$query = "select * from tb_wp";
+$query = "select * from tb_peldum";
 $sql = mysqli_query($koneksi, $query);
 $no = 1;
 $row = 6;
@@ -157,7 +157,7 @@ $sql = mysqli_query($koneksi, $query);
 while ($data = mysqli_fetch_array($sql)) {
     $pdf->setFont('Times', '', 12);
     $pdf->MultiCell(465, 0, 'Pembuat data,', 0, 'C');
-    $pdf->MultiCell(465, 30, $data['nama_pengguna'], 0, 'C');
+    $pdf->MultiCell(465, 30, 'SUBBAG YANDUAN', 0, 'C');
 }
 $pdf->AliasNbPages();
 ob_clean();

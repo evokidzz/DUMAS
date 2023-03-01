@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_GET['kode'])) {
-    $sql_cek = "SELECT * FROM tb_wp WHERE nik='" . $_GET['kode'] . "'";
+    $sql_cek = "SELECT * FROM tb_peldum WHERE nik='" . $_GET['kode'] . "'";
     $query_cek = mysqli_query($koneksi, $sql_cek);
     $data_cek = mysqli_fetch_array($query_cek, MYSQLI_BOTH);
 }
@@ -12,7 +12,7 @@ if (isset($_GET['kode'])) {
 <div class="card card-dark">
     <div class="card-header">
         <h3 class="card-title">
-            <i class="fa fa-edit"></i> Ubah Data Wajib Pajak
+            <i class="fa fa-edit"></i> Ubah Data Pelapor
         </h3>
     </div>
     <form action="" method="post" enctype="multipart/form-data">
@@ -89,7 +89,7 @@ if (isset($_GET['kode'])) {
 
 
 if (isset($_POST['Ubah'])) {
-    $sql_ubah = "UPDATE tb_wp SET 
+    $sql_ubah = "UPDATE tb_peldum SET 
     nama='" . $_POST['nama'] . "', 
     alamat='" . $_POST['alamat'] . "',
     desa='" . $_POST['desa'] . "', 
@@ -106,14 +106,14 @@ if (isset($_POST['Ubah'])) {
         echo "<script>
       Swal.fire({title: 'Ubah Data Berhasil',text: '',icon: 'success',confirmButtonText: 'OK'
       }).then((result) => {if (result.value)
-        {window.location = 'index.php?page=data-wp';
+        {window.location = 'index.php?page=data-peldum';
         }
       })</script>";
     } else {
         echo "<script>
       Swal.fire({title: 'Ubah Data Gagal',text: '',icon: 'error',confirmButtonText: 'OK'
       }).then((result) => {if (result.value)
-        {window.location = 'index.php?page=data-wp';
+        {window.location = 'index.php?page=data-peldum';
         }
       })</script>";
     }

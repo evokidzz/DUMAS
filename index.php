@@ -149,7 +149,7 @@ while ($data = $sql->fetch_assoc()) {
 								<ul class="nav nav-treeview">
 
 									<li class="nav-item">
-										<a href="?page=data-wp" class="nav-link">
+										<a href="?page=data-peldum" class="nav-link">
 											<i class="far fa-circle nav-icon"></i>
 											<p>Data DUMAS</p>
 										</a>
@@ -477,23 +477,23 @@ while ($data = $sql->fetch_assoc()) {
 								include "admin/pengguna/del_pengguna.php";
 								break;
 
-								//master data - wp
-							case 'data-wp':
-								include "admin/wp/data_wp.php";
+								//master data - peldum
+							case 'data-peldum':
+								include "admin/peldum/data_peldum.php";
 								break;
-							case 'add-wp':
-								include "admin/wp/add_wp.php";
+							case 'add-peldum':
+								include "admin/peldum/add_peldum.php";
 								break;
-							case 'edit-wp':
-								include "admin/wp/edit_wp.php";
+							case 'edit-peldum':
+								include "admin/peldum/edit_peldum.php";
 								break;
-							case 'del-wp':
-								include "admin/wp/del_wp.php";
+							case 'del-peldum':
+								include "admin/peldum/del_peldum.php";
 								break;
 
-								//master data - wp							
-							case 'cetak-wp':
-								include "admin/wp/cetak_lap_wp.php";
+								//master data - peldum							
+							case 'cetak-peldum':
+								include "admin/peldum/cetak_lap_peldum.php";
 								break;
 
 
@@ -552,7 +552,7 @@ while ($data = $sql->fetch_assoc()) {
 
 								//jenis pelayanan - cetak dumas							
 							case 'cetak-dumas':
-								include "admin/cetak/dumas/dumas.php";
+								include "admin/cetak/dumas/cetak_dumas.php";
 								break;
 
 								//jenis pelayanan - hapus
@@ -571,7 +571,7 @@ while ($data = $sql->fetch_assoc()) {
 
 								//jenis pelayanan - cetak hapus							
 							case 'cetak-hapus':
-								include "admin/cetak/hapus/cetak_cabut.php";
+								include "admin/cetak/hapus/cetak_hapus.php";
 								break;
 
 								//jenis pelayanan - hasil

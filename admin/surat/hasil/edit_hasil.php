@@ -18,7 +18,7 @@ if (isset($_GET['kode'])) {
     <form action="" method="post" enctype="multipart/form-data">
         <div class="card-body">
 
-            <input type='hidden' class="form-control" name="id_hapus" value="<?php echo $data_cek['id_hapus']; ?>" readonly />
+            <input type='hidden' class="form-control" name="id_hasil" value="<?php echo $data_cek['id_hasil']; ?>" readonly />
 
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label" for="no_dumas">NO.DUMAS</label>
@@ -49,9 +49,9 @@ if (isset($_GET['kode'])) {
             </div>
 
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label" for="ktp">KTP</label>
+                <label class="col-sm-2 col-form-label" for="no_ktp">KTP</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="ktp" name="ktp" value="<?php echo $data_cek['ktp']; ?>">
+                    <input type="text" class="form-control" id="no_ktp" name="no_ktp" value="<?php echo $data_cek['no_ktp']; ?>">
                 </div>
             </div>
             
@@ -90,10 +90,10 @@ if (isset($_GET['kode'])) {
                         <option value="">-- Pilih Keputusan --</option>
                         <?php
                         //menhecek data yg dipilih sebelumnya
-                        if ($data_cek['level'] == "Selesai") echo "<option value='Selesai' selected>Selesai</option>";
+                        if ($data_cek['keputusan'] == "Selesai") echo "<option value='Selesai' selected>Selesai</option>";
                         else echo "<option value='Selesai'>Selesai</option>";
 
-                        if ($data_cek['level'] == "Sesuai Dengan Keputusan Hukuman") echo "<option value='Sesuai Dengan Keputusan Hukuman' selected>Sesuai Dengan Keputusan Hukuman</option>";
+                        if ($data_cek['keputusan'] == "Sesuai Dengan Keputusan Hukuman") echo "<option value='Sesuai Dengan Keputusan Hukuman' selected>Sesuai Dengan Keputusan Hukuman</option>";
                         else echo "<option value='Sesuai Dengan Keputusan Hukuman'>Sesuai Dengan Keputusan Hukuman</option>";
                         ?>
                     </select>
@@ -123,11 +123,10 @@ if (isset($_POST['Ubah'])) {
     nama_terlapor='" . $_POST['nama_terlapor'] . "', 
     pangkat_terlapor='" . $_POST['pangkat_terlapor'] . "',      
     uraian='" . $_POST['uraian'] . "'
-    ket='" . $_POST['ket'] . "'
+    keputusan='" . $_POST['keputusan'] . "'
     WHERE id_hasil='" . $_POST['id_hasil'] . "'";
     $query_ubah = mysqli_query($koneksi, $sql_ubah);
     mysqli_close($koneksi);
-
 
     if ($query_ubah) {
         echo "<script>
@@ -136,13 +135,13 @@ if (isset($_POST['Ubah'])) {
         {window.location = 'index.php?page=data-hasil';
         }
       })</script>";
-    } else {
+    } else { 
         echo "<script>
       Swal.fire({title: 'Ubah Data Gagal',text: '',icon: 'error',confirmButtonText: 'OK'
       }).then((result) => {if (result.value)
         {window.location = 'index.php?page=data-hasil';
         }
-      })</script>";
+      })</script>" ;
     }
 }
 

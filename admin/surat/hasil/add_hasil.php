@@ -9,7 +9,7 @@
     <div class="form-group row">
         <label class="col-sm-2 col-form-label" for="no_dumas">NO.DUMAS</label>
         <div class="col-sm-6">
-          <input type="text" class="form-control" id="no_dumas" name="no_dumas" placeholder="NO.PELAYANAN" required>
+          <input type="text" class="form-control" id="no_dumas" name="no_dumas" placeholder="NO.DUMAS" required>
         </div>
       </div>
 
@@ -35,9 +35,9 @@
       </div>
 
       <div class="form-group row">
-        <label class="col-sm-2 col-form-label" for="ktp">KTP</label>
+        <label class="col-sm-2 col-form-label" for="no_ktp">KTP</label>
         <div class="col-sm-6">
-          <input type="text" class="form-control" id="ktp" name="ktp" placeholder="KTP" required>
+          <input type="text" class="form-control" id="no_ktp" name="no_ktp" placeholder="KTP" required>
         </div>
       </div>
 
@@ -92,7 +92,7 @@
 
 if (isset($_POST['Simpan'])) {
 
-  $sql_simpan = "INSERT INTO tb_hasil (no_dumas,tanggal,perihal,nama_pelapor,no_ktp,nama_terlapor,pangkat_terlapor,asal_dinas,uraian,ket) VALUES (
+  $sql_simpan = "INSERT INTO tb_hasil (no_dumas,tanggal,perihal,nama_pelapor,no_ktp,nama_terlapor,pangkat_terlapor,asal_dinas,uraian,keputusan) VALUES (
     '" . $_POST['no_dumas'] . "',
     '" . $_POST['tanggal'] . "',
     '" . $_POST['perihal'] . "',
