@@ -193,14 +193,14 @@ while ($data = $sql->fetch_assoc()) {
 							</li>
 
 							<li class="nav-item">
-								<a href="?page=data-perkembangan" class="nav-link">
+								<a href="?page=data-dumas" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
 									<p>Perkembangan DUMAS</p>
 								</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="?page=data-cabut" class="nav-link">
+								<a href="?page=data-hapus" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
 									<p>Pencabutan Laporan</p>
 								</a>
@@ -249,14 +249,14 @@ while ($data = $sql->fetch_assoc()) {
 							</li>
 
 							<li class="nav-item">
-								<a href="?page=data-perkembangan" class="nav-link">
+								<a href="?page=data-dumas" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
 									<p>Perkembangan DUMAS</p>
 								</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="?page=data-cabut" class="nav-link">
+								<a href="?page=data-hapus" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
 									<p>Pencabutan Laporan</p>
 								</a>
@@ -341,14 +341,14 @@ while ($data = $sql->fetch_assoc()) {
 							</li>
 
 							<li class="nav-item">
-								<a href="?page=data-perkembangan" class="nav-link">
+								<a href="?page=data-dumas" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
 									<p>Perkembangan DUMAS</p>
 								</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="?page=data-cabut" class="nav-link">
+								<a href="?page=data-hapus" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
 									<p>Pencabutan Laporan</p>
 								</a>
@@ -397,14 +397,14 @@ while ($data = $sql->fetch_assoc()) {
 							</li>
 
 							<li class="nav-item">
-								<a href="?page=data-perkembangan" class="nav-link">
+								<a href="?page=data-dumas" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
 									<p>Perkembangan DUMAS</p>
 								</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="?page=data-cabut" class="nav-link">
+								<a href="?page=data-hapus" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
 									<p>Pencabutan Laporan</p>
 								</a>
@@ -536,42 +536,42 @@ while ($data = $sql->fetch_assoc()) {
 								include "admin/cetak/disposisi/cetak_disposisi.php";
 								break;
 
-								//jenis pelayanan - perkembangan
-							case 'data-perkembangan':
-								include "admin/surat/perkembangan/data_perkembangan.php";
+								//jenis pelayanan - dumas
+							case 'data-dumas':
+								include "admin/surat/dumas/data_dumas.php";
 								break;
-							case 'add-perkembangan':
-								include "admin/surat/perkembangan/add_perkembangan.php";
+							case 'add-dumas':
+								include "admin/surat/dumas/add_dumas.php";
 								break;
-							case 'del-perkembangan':
-								include "admin/surat/perkembangan/del_perkembangan.php";
+							case 'del-dumas':
+								include "admin/surat/dumas/del_dumas.php";
 								break;
-							case 'edit-perkembangan':
-								include "admin/surat/perkembangan/edit_perkembangan.php";
-								break;
-
-								//jenis pelayanan - cetak perkembangan							
-							case 'cetak-perkembangan':
-								include "admin/cetak/perkembangan/cetak_perkembangan.php";
+							case 'edit-dumas':
+								include "admin/surat/dumas/edit_dumas.php";
 								break;
 
-								//jenis pelayanan - cabut
-							case 'data-cabut':
-								include "admin/surat/cabut/data_cabut.php";
-								break;
-							case 'add-cabut':
-								include "admin/surat/cabut/add_cabut.php";
-								break;
-							case 'del-cabut':
-								include "admin/surat/cabut/del_cabut.php";
-								break;
-							case 'edit-cabut':
-								include "admin/surat/cabut/edit_cabut.php";
+								//jenis pelayanan - cetak dumas							
+							case 'cetak-dumas':
+								include "admin/cetak/dumas/dumas.php";
 								break;
 
-								//jenis pelayanan - cetak cabut							
-							case 'cetak-cabut':
-								include "admin/cetak/cabut/cetak_cabut.php";
+								//jenis pelayanan - hapus
+							case 'data-hapus':
+								include "admin/surat/hapus/data_hapus.php";
+								break;
+							case 'add-hapus':
+								include "admin/surat/hapus/add_hapus.php";
+								break;
+							case 'del-hapus':
+								include "admin/surat/hapus/del_hapus.php";
+								break;
+							case 'edit-hapus':
+								include "admin/surat/hapus/edit_hapus.php";
+								break;
+
+								//jenis pelayanan - cetak hapus							
+							case 'cetak-hapus':
+								include "admin/cetak/hapus/cetak_cabut.php";
 								break;
 
 								//jenis pelayanan - hasil

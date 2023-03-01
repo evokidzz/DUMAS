@@ -7,7 +7,7 @@ $data = mysqli_fetch_array($sql_per_id); { ?>
   <div class="card card-dark">
     <div class="card-header">
       <h3 class="card-title">
-        <i class="fa fa-table"></i> Data Berkas disposisi
+        <i class="fa fa-table"></i> Data Berkas Disposisi
       </h3>
     </div>
 

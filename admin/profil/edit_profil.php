@@ -30,18 +30,6 @@ if (isset($_GET['kode'])) {
 					<input type="text" class="form-control" id="alamat" name="alamat" value="<?php echo $data_cek['alamat']; ?>" />
 				</div>
 			</div>
-			<div class="form-group row">
-				<label class="col-sm-2 col-form-label">Kecamatan</label>
-				<div class="col-sm-8">
-					<input type="text" class="form-control" id="kec" name="kec" value="<?php echo $data_cek['kecamatan']; ?>" />
-				</div>
-			</div>
-			<div class="form-group row">
-				<label class="col-sm-2 col-form-label">Kabupaten</label>
-				<div class="col-sm-8">
-					<input type="text" class="form-control" id="kab" name="kab" value="<?php echo $data_cek['kabupaten']; ?>" />
-				</div>
-			</div>
 
 		</div>
 		<div class="card-footer">
@@ -59,8 +47,6 @@ if (isset($_POST['Ubah'])) {
 	$sql_ubah = "UPDATE tb_profil SET 
     nama_kantor='" . $_POST['nama_profil'] . "', 
     alamat='" . $_POST['alamat'] . "',
-    kecamatan='" . $_POST['kec'] . "', 
-    kabupaten='" . $_POST['kab'] . "'
     WHERE id_profil='" . $_POST['id_profil'] . "'";
 	$query_ubah = mysqli_query($koneksi, $sql_ubah);
 	mysqli_close($koneksi);

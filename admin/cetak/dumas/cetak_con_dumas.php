@@ -64,7 +64,7 @@ $data    = mysqli_fetch_array($query); ?>
                 <td>
                     <center>
                         <font size="4">KEPOLISIAN DAERAH KALIMANTAN SELATAN</font><br>
-                        <font size="5"><b>BIDANG PROFESI DAN PENGAMANAN/b></font><br>
+                        <font size="5"><b>BIDANG PROFESI DAN PENGAMANAN</b></font><br>
                         <font size="3"><i>Jl. S. Parman No.16, Antasan Besar</i></font>
                         <font size="3"><i>Kalimantan Selatan Kode Pos 70123</i></font>
                         <!-- <font size="3"><i>Telepon (0511) 4721358, Faksimile (0511) 4721027</i></font> -->

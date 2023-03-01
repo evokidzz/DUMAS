@@ -33,7 +33,7 @@ $data = mysqli_fetch_array($sql_per_id); { ?>
               <th>PANGKAT</th>
               <th>ASAL DINAS</th>
               <th>URAIAN</th>
-              <th>KETERANGAN</th>
+              <th>KEPUTUSAN</th>
 
               <th class="text-center">AKSI</th>
             </tr>
@@ -57,7 +57,7 @@ $data = mysqli_fetch_array($sql_per_id); { ?>
                 <td><?php echo $data['pangkat_terlapor']; ?></td>
                 <td><?php echo $data['asal_dinas']; ?></td>
                 <td><?php echo $data['uraian']; ?></td>
-                <td><?php echo $data['ket']; ?></td>
+                <td><?php echo $data['keputusan']; ?></td>
                 <td class="text-center">
                   </a>
                   <a href="?page=edit-dumas&kode=<?php echo $data['id_dumas']; ?>" title="Edit" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>

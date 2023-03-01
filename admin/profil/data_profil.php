@@ -12,8 +12,6 @@
 					<tr>
 						<th>Nama Instansi</th>
 						<th>Alamat</th>
-						<th>Kecamatan</th>
-						<th>Kabupaten</th>
 						<th>Kelola</th>
 					</tr>
 				</thead>
@@ -31,12 +29,6 @@
 							</td>
 							<td>
 								<?php echo $data['alamat']; ?>
-							</td>
-							<td>
-								<?php echo $data['kecamatan']; ?>
-							</td>
-							<td>
-								<?php echo $data['kabupaten']; ?>
 							</td>
 							<td>
 								<a href="?page=edit-profil&kode=<?php echo $data['id_profil']; ?>" title="Ubah" class="btn btn-success btn-sm">

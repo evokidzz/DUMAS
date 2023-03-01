@@ -30,10 +30,10 @@ class PDF extends FPDF
         // Title
         // $this->text(137, 20, 'LAPORAN REKAP');
         // $this->text(120, 26, 'SURAT KETERANGAN DOMISILI');
-        $this->text(117, 15, 'PEMERINTAH KAB.BANJAR');
+        $this->text(117, 15, 'KEPOLISIAN DAERAH KALIMANTAN SELATAN');
 
         $this->SetFont('Arial', 'B', 20);
-        $this->text(98, 22, 'BADAN PENDAPATAN DAERAH');
+        $this->text(98, 22, 'BIDANG PROFESI DAN PENGAMANAN');
 
 
         // Alamat
