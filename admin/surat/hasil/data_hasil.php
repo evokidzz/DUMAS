@@ -16,7 +16,7 @@ $data = mysqli_fetch_array($sql_per_id); { ?>
     <div class="card-body">
       <div class="table-responsive">
         <div>
-          <a href="?page=add-hapus" class="btn btn-primary">
+          <a href="?page=add-hasil" class="btn btn-primary">
             <i class="fa fa-edit"></i>Tambah Data</a>
         </div>
         <br>

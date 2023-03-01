@@ -70,13 +70,6 @@
       </div>
 
       <div class="form-group row">
-        <label class="col-sm-2 col-form-label" for="uraian">URAIAN</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" id="uraian" name="uraian" placeholder="" required>
-        </div>
-      </div>
-
-      <div class="form-group row">
 				<label class="col-sm-2 col-form-label">KEPUTUSAN</label>
 				<div class="col-sm-4">
 					<select name="keputusan" id="keputusan" class="form-control">
@@ -86,7 +79,6 @@
 					</select>
 				</div>
 			</div>
-
 
     </div>
     <div class="card-footer">
@@ -100,8 +92,6 @@
 
 if (isset($_POST['Simpan'])) {
 
-  $validatesql ="SELECT "
-
   $sql_simpan = "INSERT INTO tb_hasil (no_dumas,tanggal,perihal,nama_pelapor,no_ktp,nama_terlapor,pangkat_terlapor,asal_dinas,uraian,ket) VALUES (
     '" . $_POST['no_dumas'] . "',
     '" . $_POST['tanggal'] . "',
@@ -113,13 +103,9 @@ if (isset($_POST['Simpan'])) {
     '" . $_POST['asal_dinas'] . "',
     '" . $_POST['uraian'] . "',
     '" . $_POST['keputusan'] . "')";
-
-  if ($_POST['no_dumas']->rowCount() > 0) {
-    echo "No.dumas Sdh Ada";
-  } else {
-    $query_simpan = mysqli_query($koneksi, $sql_simpan);
-    mysqli_close($koneksi);
-  }
+ 
+  $query_simpan = mysqli_query($koneksi, $sql_simpan);
+  mysqli_close($koneksi);
 
   if ($query_simpan) {
     echo "<script>
