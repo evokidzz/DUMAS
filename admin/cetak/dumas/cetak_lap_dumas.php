@@ -71,7 +71,7 @@ $yi = 53;
 $ya = 55;;
 
 $pdf->SetFont('Arial', 'B', 15);
-$pdf->Text(100, 50, 'LAPORAN DATA BERKAS LAPORAN DISPOSISI');
+$pdf->Text(100, 50, 'LAPORAN DATA BERKAS LAPORAN PERKEMBANGAN DUMAS');
 
 
 
@@ -87,11 +87,11 @@ $pdf->CELL(45, 6, 'NAMA TERLAPOR', 1, 0, 'C', 1);
 $pdf->CELL(45, 6, 'PANGKAT', 1, 0, 'C', 1);
 $pdf->CELL(45, 6, 'ASAL DINAS', 1, 0, 'C', 1);
 $pdf->CELL(30, 6, 'URAIAN', 1, 0, 'C', 1);
-$pdf->CELL(30, 6, 'LEVEL', 1, 0, 'C', 1);
+$pdf->CELL(30, 6, 'KETERANGAN', 1, 0, 'C', 1);
 
 
 
-$query = "select * from tb_diposisi";
+$query = "select * from tb_dumas";
 $sql = mysqli_query($koneksi, $query);
 $no = 1;
 $row = 6;
@@ -109,7 +109,7 @@ while ($data = mysqli_fetch_array($sql)) {
     $pdf->CELL(45, 6, $data['pangkat_terlapor'], 1, 0, 'C', 1);
     $pdf->CELL(45, 6, $data['asal_dinas'], 1, 0, 'C', 1);
     $pdf->CELL(30, 6, $data['uraian'], 1, 0, 'C', 1);
-    $pdf->CELL(30, 6, $data['level'], 1, 0, 'C', 1);
+    $pdf->CELL(30, 6, $data['ket'], 1, 0, 'C', 1);
 
     $ya = $ya + $row;
     $no++;
@@ -156,5 +156,5 @@ $pdf->MultiCell(250, 12, 'Banjarmasin, ' . date('d') . ' ' . $bln_list[date('m')
 
 $pdf->AliasNbPages();
 ob_clean();
-$pdf->Output('I', 'Laporan Data Laporan Disposisi.PDF');
+$pdf->Output('I', 'Laporan Data Laporan Perkembangan Dumas.PDF');
 }
