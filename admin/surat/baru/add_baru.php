@@ -81,38 +81,34 @@
 
 if (isset($_POST['Simpan'])) {
 
-  $validatesql ="SELECT "
-
-  $sql_simpan = "INSERT INTO tb_baru (no_dumas,tanggal,perihal,nama_pelapor,no_ktp,nama_terlapor,pangkat_terlapor,asal_dinas,kec,uraian) VALUES (
+  $sql_simpan = "INSERT INTO tb_baru (no_dumas,tanggal,perihal,nama_pelapor,no_ktp,nama_terlapor,pangkat_terlapor,asal_dinas,uraian) VALUES (
+    
     '" . $_POST['no_dumas'] . "',
-    '" . $_POST['tanggal'] . "',
-    '" . $_POST['perihal'] . "',
-    '" . $_POST['nama_pelapor'] . "',
-    '" . $_POST['no_ktp'] . "',
-    '" . $_POST['nama_terlapor'] . "',
-    '" . $_POST['pangkat_terlapor'] . "',
-    '" . $_POST['uraian'] . "')";
+        '" . $_POST['tanggal'] . "',
+        '" . $_POST['perihal'] . "',
+        '" . $_POST['nama_pelapor'] . "',
+        '" . $_POST['no_ktp'] . "',
+        '" . $_POST['nama_terlapor'] . "',
+    '" . $_POST['pangkat_terlapor'] . "', 
+    '" . $_POST['asal_dinas'] . "',    
+           '" . $_POST['uraian'] . "')";
 
-  if ($_POST['no_dumas']->rowCount() > 0) {
-    echo "No.Pelayanan Sdh Ada";
-  } else {
-    $query_simpan = mysqli_query($koneksi, $sql_simpan);
-    mysqli_close($koneksi);
-  }
+  $query_simpan = mysqli_query($koneksi, $sql_simpan);
+  mysqli_close($koneksi);
 
   if ($query_simpan) {
     echo "<script>
-		  Swal.fire({title: 'Tambah Data Berhasil',text: '',icon: 'success',confirmButtonText: 'OK'
-		  }).then((result) => {if (result.value){
-			  window.location = 'index.php?page=data-baru';
-			  }
-		  })</script>";
+      Swal.fire({title: 'Tambah Data Berhasil',text: '',icon: 'success',confirmButtonText: 'OK'
+      }).then((result) => {if (result.value){
+        window.location = 'index.php?page=data-mutasi';
+        }
+      })</script>";
   } else {
     echo "<script>
-		  Swal.fire({title: 'Tambah Data Gagal',text: '',icon: 'error',confirmButtonText: 'OK'
-		  }).then((result) => {if (result.value){
-			  window.location = 'index.php?page=add-baru';
-			  }
-		  })</script>" . mysqli_errno($koneksi);
+      Swal.fire({title: 'Tambah Data Gagal',text: '',icon: 'error',confirmButtonText: 'OK'
+      }).then((result) => {if (result.value){
+        window.location = 'index.php?page=add-mutasi';
+        }
+      })</script>";
   }
 }

@@ -235,35 +235,35 @@ while ($data = $sql->fetch_assoc()) {
 						<ul class="nav nav-treeview">
 
 						<li class="nav-item">
-								<a href="?page=data-baru" class="nav-link">
+								<a href="?page=cetak-baru" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
 									<p>Laporan Baru</p>
 								</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="?page=data-disposisi" class="nav-link">
+								<a href="?page=cetak-disposisi" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
 									<p>Disposisi</p>
 								</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="?page=data-dumas" class="nav-link">
+								<a href="?page=cetak-dumas" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
 									<p>Perkembangan DUMAS</p>
 								</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="?page=data-hapus" class="nav-link">
+								<a href="?page=cetak-hapus" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
 									<p>Pencabutan Laporan</p>
 								</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="?page=data-hasil" class="nav-link">
+								<a href="?page=cetak-hasil" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
 									<p>Hasil Penyelidikan</p>
 								</a>
@@ -383,35 +383,35 @@ while ($data = $sql->fetch_assoc()) {
 						<ul class="nav nav-treeview">
 
 							<li class="nav-item">
-								<a href="?page=data-baru" class="nav-link">
+								<a href="?page=cetak-baru" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
 									<p>Laporan Baru</p>
 								</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="?page=data-disposisi" class="nav-link">
+								<a href="?page=cetak-disposisi" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
 									<p>Disposisi</p>
 								</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="?page=data-dumas" class="nav-link">
+								<a href="?page=cetak-dumas" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
 									<p>Perkembangan DUMAS</p>
 								</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="?page=data-hapus" class="nav-link">
+								<a href="?page=cetak-hapus" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
 									<p>Pencabutan Laporan</p>
 								</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="?page=data-hasil" class="nav-link">
+								<a href="?page=cetak-hasil" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
 									<p>Hasil Penyelidikan</p>
 								</a>

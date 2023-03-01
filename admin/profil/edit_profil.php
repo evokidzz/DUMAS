@@ -24,6 +24,7 @@ if (isset($_GET['kode'])) {
 					<input type="text" class="form-control" id="nama_profil" name="nama_profil" value="<?php echo $data_cek['nama_kantor']; ?>" />
 				</div>
 			</div>
+
 			<div class="form-group row">
 				<label class="col-sm-2 col-form-label">Alamat</label>
 				<div class="col-sm-8">
@@ -40,13 +41,12 @@ if (isset($_GET['kode'])) {
 </div>
 
 
-
 <?php
 
 if (isset($_POST['Ubah'])) {
 	$sql_ubah = "UPDATE tb_profil SET 
     nama_kantor='" . $_POST['nama_profil'] . "', 
-    alamat='" . $_POST['alamat'] . "',
+    alamat='" . $_POST['alamat'] . "'
     WHERE id_profil='" . $_POST['id_profil'] . "'";
 	$query_ubah = mysqli_query($koneksi, $sql_ubah);
 	mysqli_close($koneksi);
