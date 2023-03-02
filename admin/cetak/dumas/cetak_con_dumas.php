@@ -14,7 +14,7 @@ $data    = mysqli_fetch_array($query); ?>
 <html>
 
 <head>
-    <title>TANDA TERIMA BERKAS PERKEMBANGAN DUMAS</title>
+    <title>TANDA TERIMA BERKAS DUMAS</title>
     <link rel="icon" href="../../../dist/img/logo_propam.png">
     <style type="text/css">
         table {
@@ -79,7 +79,7 @@ $data    = mysqli_fetch_array($query); ?>
             <table width="550">
                 <tr>
                     <td class="text2">
-                        <font size="3"><?php echo date('d-m-Y', strtotime($data["tgl_pel"]));   ?></font>
+                        <font size="3"><?php echo date('d-m-Y', strtotime($data["tanggal"]));   ?></font>
 
                         <!-- <script type='text/javascript'>
 							var months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
@@ -101,7 +101,7 @@ $data    = mysqli_fetch_array($query); ?>
             </table>
         </table>
         <table>
-            <strong style="font-size: 20px;"><b><u>TANDA TERIMA LAPORAN PERKEMBAGAN DUMAS</u></b></strong>
+            <strong style="font-size: 20px;"><b><u>TANDA TERIMA LAPORAN DISPOSISI</u></b></strong>
 
 
         </table>
@@ -119,7 +119,7 @@ $data    = mysqli_fetch_array($query); ?>
                     <font size="3">JENIS PELAYANAN</font>
                 </td>
                 <td>
-                    <font size="3">: PERKEMBANGAN DUMAS</font>
+                    <font size="3">: DISPOSISI </font>
                 </td>
             </tr>
             <tr class="text3">
@@ -127,7 +127,7 @@ $data    = mysqli_fetch_array($query); ?>
                     <font size="3">PERIHAL</font>
                 </td>
                 <td>
-                    <font size="3">: <?php echo $data['PERIHAL']; ?></font>
+                    <font size="3">: <?php echo $data['perihal']; ?></font>
                 </td>
             </tr>
         </table>
@@ -172,10 +172,10 @@ $data    = mysqli_fetch_array($query); ?>
             </tr>
             <tr class="text3">
                 <td width="100">
-                    <font size="3">KETERANGAN</font>
+                    <font size="3">URAIAN</font>
                 </td>
                 <td>
-                    <font size="3">: <?php echo $data['ket']; ?></font>
+                    <font size="3">: <?php echo $data['uraian']; ?></font>
                 </td>
             </tr>
         </table>

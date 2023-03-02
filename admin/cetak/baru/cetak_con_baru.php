@@ -79,7 +79,7 @@ $data    = mysqli_fetch_array($query); ?>
             <table width="550">
                 <tr>
                     <td class="text2">
-                        <font size="3"><?php echo date('d-m-Y', strtotime($data["tgl_pel"]));   ?></font>
+                        <font size="3"><?php echo date('d-m-Y', strtotime($data["tanggal"]));   ?></font>
 
                         <!-- <script type='text/javascript'>
 							var months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
@@ -127,7 +127,7 @@ $data    = mysqli_fetch_array($query); ?>
                     <font size="3">PERIHAL</font>
                 </td>
                 <td>
-                    <font size="3">: <?php echo $data['PERIHAL']; ?></font>
+                    <font size="3">: <?php echo $data['perihal']; ?></font>
                 </td>
             </tr>
         </table>

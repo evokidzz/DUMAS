@@ -9,7 +9,7 @@
       <div class="form-group row">
         <label class="col-sm-2 col-form-label" for="no_dumas">NO.DUMAS</label>
         <div class="col-sm-6">
-          <input type="text" class="form-control" id="no_dumas" name="no_dumas" placeholder="NO.PELAYANAN" required>
+          <input type="text" class="form-control" id="no_dumas" name="no_dumas" placeholder="NO.DUMAS" required>
         </div>
       </div>
 

@@ -25,7 +25,7 @@ class PDF extends FPDF
         $this->Cell(25);
 
         // Title
-        $this->text(117, 15, 'KEPOLISIAN DAERAH KALIMANTAN SELATAN');
+        $this->text(104, 15, 'KEPOLISIAN DAERAH KALIMANTAN SELATAN');
 
         $this->SetFont('Arial', 'B', 20);
         $this->text(98, 22, 'BIDANG PROFESI DAN PENGAMANAN');
@@ -33,8 +33,8 @@ class PDF extends FPDF
 
         // Alamat
         $this->SetFont('Arial', '', 12);
-        $this->text(110, 28, 'Jl. S. Parman No.16, Antasan Besar ');
-        $this->text(115, 33, 'Kalimantan Selatan Kode Pos 70123');
+        $this->text(130, 28, 'Jl. S. Parman No.16, Antasan Besar ');
+        $this->text(129, 33, 'Kalimantan Selatan Kode Pos 70123');
 
         // $this->SetFont('Arial', 'B', 12);
         // $this->text(103, 38, 'Telepon (0511) 4721358, Faksimile (0511) 4721027');
@@ -44,9 +44,9 @@ class PDF extends FPDF
         $this->SetLineWidth(1);
 
         //garis
-        $this->Line(8, 43, 288, 43);
+        $this->Line(8, 35, 288, 35);
         $this->SetLineWidth(0);
-        $this->Line(8, 44, 288, 44);
+        $this->Line(8, 36, 288, 36);
     }
 
     // Halaman
@@ -68,26 +68,26 @@ $pdf->AddPage();
 
 
 
-$yi = 53;
+$yi = 45;
 $ya = 55;;
 
 $pdf->SetFont('Arial', 'B', 15);
-$pdf->Text(100, 50, 'LAPORAN DATA BERKAS LAPORAN BARU');
+$pdf->Text(100, 42, 'LAPORAN DATA BERKAS LAPORAN BARU');
 
 
 
 $pdf->SetFont('Arial', 'B', 8);
 $pdf->setFillColor(222, 222, 222);
-$pdf->setXY(3, 53);
+$pdf->setXY(3, 45);
 $pdf->CELL(10, 6, 'NO', 1, 0, 'C', 1);
-$pdf->CELL(27, 6, 'NO.DUMAS', 1, 0, 'C', 1);
-$pdf->CELL(30, 6, 'TANGGAL', 1, 0, 'C', 1);
+$pdf->CELL(37, 6, 'NO.DUMAS', 1, 0, 'C', 1);
+$pdf->CELL(16, 6, 'TANGGAL', 1, 0, 'C', 1);
 $pdf->CELL(35, 6, 'PERIHAL', 1, 0, 'C', 1);
-$pdf->CELL(25, 6, 'NAMA PELAPOR', 1, 0, 'C', 1);
-$pdf->CELL(45, 6, 'NAMA TERLAPOR', 1, 0, 'C', 1);
-$pdf->CELL(45, 6, 'PANGKAT', 1, 0, 'C', 1);
-$pdf->CELL(45, 6, 'ASAL DINAS', 1, 0, 'C', 1);
-$pdf->CELL(30, 6, 'URAIAN.', 1, 0, 'C', 1);
+$pdf->CELL(27, 6, 'NAMA PELAPOR', 1, 0, 'C', 1);
+$pdf->CELL(27, 6, 'NAMA TERLAPOR', 1, 0, 'C', 1);
+$pdf->CELL(22, 6, 'PANGKAT', 1, 0, 'C', 1);
+$pdf->CELL(30, 6, 'ASAL DINAS', 1, 0, 'C', 1);
+$pdf->CELL(88, 6, 'URAIAN', 1, 0, 'C', 1);
 
 
 
@@ -101,14 +101,14 @@ while ($data = mysqli_fetch_array($sql)) {
     $pdf->setFont('Times', '', 8);
     $pdf->setFillColor(255, 255, 255);
     $pdf->CELL(10, 6, $no, 1, 0, 'C', 1);
-    $pdf->CELL(27, 6, $data['no_dumas'], 1, 0, 'C', 1);
-    $pdf->CELL(30, 6, $data['tanggal'], 1, 0, 'C', 1);
+    $pdf->CELL(37, 6, $data['no_dumas'], 1, 0, 'C', 1);
+    $pdf->CELL(16, 6, $data['tanggal'], 1, 0, 'C', 1);
     $pdf->CELL(35, 6, $data['perihal'], 1, 0, 'C', 1);
-    $pdf->CELL(25, 6, $data['nama_pelapor'], 1, 0, 'C', 1);
-    $pdf->CELL(45, 6, $data['nama_terlapor'], 1, 0, 'C', 1);
-    $pdf->CELL(45, 6, $data['pangkat_terlapor'], 1, 0, 'C', 1);
-    $pdf->CELL(45, 6, $data['asal_dinas'], 1, 0, 'C', 1);
-    $pdf->CELL(30, 6, $data['uraian'], 1, 0, 'C', 1);
+    $pdf->CELL(27, 6, $data['nama_pelapor'], 1, 0, 'C', 1);
+    $pdf->CELL(27, 6, $data['nama_terlapor'], 1, 0, 'C', 1);
+    $pdf->CELL(22, 6, $data['pangkat_terlapor'], 1, 0, 'C', 1);
+    $pdf->CELL(30, 6, $data['asal_dinas'], 1, 0, 'C', 1);
+    $pdf->CELL(88, 6, $data['uraian'], 1, 0, 'C', 1);
 
     $ya = $ya + $row;
     $no++;

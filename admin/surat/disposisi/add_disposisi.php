@@ -9,7 +9,7 @@
       <div class="form-group row">
         <label class="col-sm-2 col-form-label" for="no_dumas">NO.DUMAS</label>
         <div class="col-sm-6">
-          <input type="text" class="form-control" id="no_dumas" name="no_dumas" placeholder="NO.PELAYANAN" required>
+          <input type="text" class="form-control" id="no_dumas" name="no_dumas" placeholder="NO.DUMAS" required>
         </div>
       </div>
 
@@ -35,9 +35,9 @@
       </div>
 
       <div class="form-group row">
-        <label class="col-sm-2 col-form-label" for="ktp">KTP</label>
+        <label class="col-sm-2 col-form-label" for="no_ktp">KTP</label>
         <div class="col-sm-6">
-          <input type="text" class="form-control" id="ktp" name="ktp" placeholder="KTP" required>
+          <input type="text" class="form-control" id="no_ktp" name="no_ktp" placeholder="KTP" required>
         </div>
       </div>
 

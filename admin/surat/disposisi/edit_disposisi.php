@@ -49,9 +49,9 @@ if (isset($_GET['kode'])) {
             </div>
 
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label" for="ktp">KTP</label>
+                <label class="col-sm-2 col-form-label" for="no_ktp">KTP</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="ktp" name="ktp" value="<?php echo $data_cek['ktp']; ?>">
+                    <input type="text" class="form-control" id="no_ktp" name="no_ktp" value="<?php echo $data_cek['no_ktp']; ?>">
                 </div>
             </div>
             

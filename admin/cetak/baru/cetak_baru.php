@@ -47,10 +47,12 @@ $data = mysqli_fetch_array($sql_per_id); { ?>
           ?>
 
             <tr>
+            <td><?php echo $no++; ?></td>
                 <td><?php echo $data['no_dumas']; ?></td>
                 <td><?php echo $data['tanggal']; ?></td>
                 <td><?php echo $data['perihal']; ?></td>
                 <td><?php echo $data['nama_pelapor']; ?></td>
+                <td><?php echo $data['no_ktp']; ?></td>
                 <td><?php echo $data['nama_terlapor']; ?></td>
                 <td><?php echo $data['pangkat_terlapor']; ?></td>
                 <td><?php echo $data['asal_dinas']; ?></td>

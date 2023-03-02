@@ -25,7 +25,7 @@ class PDF extends FPDF
         $this->Cell(25);
 
         // Title
-        $this->text(117, 15, 'KEPOLISIAN DAERAH KALIMANTAN SELATAN');
+        $this->text(104, 15, 'KEPOLISIAN DAERAH KALIMANTAN SELATAN');
 
         $this->SetFont('Arial', 'B', 20);
         $this->text(98, 22, 'BIDANG PROFESI DAN PENGAMANAN');
@@ -33,9 +33,8 @@ class PDF extends FPDF
 
         // Alamat
         $this->SetFont('Arial', '', 12);
-        $this->text(110, 28, 'Jl. S. Parman No.16, Antasan Besar ');
-        $this->text(115, 33, 'Kalimantan Selatan Kode Pos 70123');
-
+        $this->text(130, 28, 'Jl. S. Parman No.16, Antasan Besar ');
+        $this->text(129, 33, 'Kalimantan Selatan Kode Pos 70123');
         // $this->SetFont('Arial', 'B', 12);
         // $this->text(103, 38, 'Telepon (0511) 4721358, Faksimile (0511) 4721027');
 

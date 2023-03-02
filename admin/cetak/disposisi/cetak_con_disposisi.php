@@ -64,7 +64,7 @@ $data    = mysqli_fetch_array($query); ?>
                 <td>
                     <center>
                         <font size="4">KEPOLISIAN DAERAH KALIMANTAN SELATAN</font><br>
-                        <font size="5"><b>BIDANG PROFESI DAN PENGAMANAN/b></font><br>
+                        <font size="5"><b>BIDANG PROFESI DAN PENGAMANAN</b></font><br>
                         <font size="3"><i>Jl. S. Parman No.16, Antasan Besar</i></font>
                         <font size="3"><i>Kalimantan Selatan Kode Pos 70123</i></font>
                         <!-- <font size="3"><i>Telepon (0511) 4721358, Faksimile (0511) 4721027</i></font> -->
@@ -79,7 +79,7 @@ $data    = mysqli_fetch_array($query); ?>
             <table width="550">
                 <tr>
                     <td class="text2">
-                        <font size="3"><?php echo date('d-m-Y', strtotime($data["tgl_pel"]));   ?></font>
+                        <font size="3"><?php echo date('d-m-Y', strtotime($data["tanggal"]));   ?></font>
 
                         <!-- <script type='text/javascript'>
 							var months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
@@ -127,7 +127,7 @@ $data    = mysqli_fetch_array($query); ?>
                     <font size="3">PERIHAL</font>
                 </td>
                 <td>
-                    <font size="3">: <?php echo $data['PERIHAL']; ?></font>
+                    <font size="3">: <?php echo $data['perihal']; ?></font>
                 </td>
             </tr>
         </table>

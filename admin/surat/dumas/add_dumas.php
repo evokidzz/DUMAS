@@ -35,9 +35,9 @@
       </div>
 
       <div class="form-group row">
-        <label class="col-sm-2 col-form-label" for="ktp">KTP</label>
+        <label class="col-sm-2 col-form-label" for="no_KRP">KTP</label>
         <div class="col-sm-6">
-          <input type="text" class="form-control" id="ktp" name="ktp" placeholder="KTP" required>
+          <input type="text" class="form-control" id="no_KRP" name="no_KRP" placeholder="KTP" required>
         </div>
       </div>
 
@@ -93,7 +93,7 @@
 
 if (isset($_POST['Simpan'])) {
 
-    $sql_simpan = "INSERT INTO tb_dumas (no_dumas,tanggal,perihal,nama_pelapor,no_ktp,nama_terlapor,pangkat_terlapor,asal_dinas,uraian,ket) VALUES (
+    $sql_simpan = "INSERT INTO tb_dumas (no_dumas,tanggal,perihal,nama_pelapor,no_ktp,nama_terlapor,pangkat_terlapor,asal_dinas,uraian,keputusan) VALUES (
     '" . $_POST['no_dumas'] . "',
     '" . $_POST['tanggal'] . "',
     '" . $_POST['perihal'] . "',
