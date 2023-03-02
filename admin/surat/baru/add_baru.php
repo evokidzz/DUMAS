@@ -35,9 +35,9 @@
       </div>
 
       <div class="form-group row">
-        <label class="col-sm-2 col-form-label" for="ktp">KTP</label>
+        <label class="col-sm-2 col-form-label" for="no_ktp">KTP</label>
         <div class="col-sm-6">
-          <input type="text" class="form-control" id="ktp" name="ktp" placeholder="KTP" required>
+          <input type="text" class="form-control" id="no_ktp" name="no_ktp" placeholder="KTP" required>
         </div>
       </div>
 
@@ -100,14 +100,14 @@ if (isset($_POST['Simpan'])) {
     echo "<script>
       Swal.fire({title: 'Tambah Data Berhasil',text: '',icon: 'success',confirmButtonText: 'OK'
       }).then((result) => {if (result.value){
-        window.location = 'index.php?page=data-mutasi';
+        window.location = 'index.php?page=data-baru';
         }
       })</script>";
   } else {
     echo "<script>
       Swal.fire({title: 'Tambah Data Gagal',text: '',icon: 'error',confirmButtonText: 'OK'
       }).then((result) => {if (result.value){
-        window.location = 'index.php?page=add-mutasi';
+        window.location = 'index.php?page=add-baru';
         }
       })</script>";
   }
