@@ -67,7 +67,7 @@ $pdf = new PDF('L', 'mm', array(230, 297));
 $pdf->AddPage();
 
 
-$yi = 53;
+$yi = 44;
 $ya = 55;;
 
 $pdf->SetFont('Arial', 'B', 15);
@@ -79,14 +79,15 @@ $pdf->SetFont('Arial', 'B', 8);
 $pdf->setFillColor(222, 222, 222);
 $pdf->setXY(3, 44);
 $pdf->CELL(10, 6, 'NO', 1, 0, 'C', 1);
-$pdf->CELL(30, 6, 'NO.DUMAS', 1, 0, 'C', 1);
-$pdf->CELL(30, 6, 'TANGGAL', 1, 0, 'C', 1);
+$pdf->CELL(37, 6, 'NO.DUMAS', 1, 0, 'C', 1);
+$pdf->CELL(16, 6, 'TANGGAL', 1, 0, 'C', 1);
 $pdf->CELL(35, 6, 'PERIHAL', 1, 0, 'C', 1);
-$pdf->CELL(40, 6, 'NAMA PELAPOR', 1, 0, 'C', 1);
-$pdf->CELL(40, 6, 'NAMA TERLAPOR', 1, 0, 'C', 1);
-$pdf->CELL(30, 6, 'PANGKAT', 1, 0, 'C', 1);
-$pdf->CELL(45, 6, 'ASAL DINAS', 1, 0, 'C', 1);
-$pdf->CELL(30, 6, 'KEPUTUSAN', 1, 0, 'C', 1);
+$pdf->CELL(27, 6, 'NAMA PELAPOR', 1, 0, 'C', 1);
+$pdf->CELL(27, 6, 'NAMA TERLAPOR', 1, 0, 'C', 1);
+$pdf->CELL(22, 6, 'PANGKAT', 1, 0, 'C', 1);
+$pdf->CELL(30, 6, 'ASAL DINAS', 1, 0, 'C', 1);
+$pdf->CELL(67, 6, 'URAIAN', 1, 0, 'C', 1);
+$pdf->CELL(20, 6, 'KEPUTUSAN', 1, 0, 'C', 1);
 
 
 
@@ -100,14 +101,17 @@ while ($data = mysqli_fetch_array($sql)) {
     $pdf->setFont('Times', '', 6);
     $pdf->setFillColor(255, 255, 255);
     $pdf->CELL(10, 6, $no, 1, 0, 'C', 1);
-    $pdf->CELL(30, 6, $data['no_dumas'], 1, 0, 'C', 1);
-    $pdf->CELL(30, 6, $data['tanggal'], 1, 0, 'C', 1);
+    $pdf->CELL(37, 6, $data['no_dumas'], 1, 0, 'C', 1);
+    $pdf->CELL(16, 6, $data['tanggal'], 1, 0, 'C', 1);
     $pdf->CELL(35, 6, $data['perihal'], 1, 0, 'C', 1);
-    $pdf->CELL(40, 6, $data['nama_pelapor'], 1, 0, 'C', 1);
-    $pdf->CELL(40, 6, $data['nama_terlapor'], 1, 0, 'C', 1);
-    $pdf->CELL(30, 6, $data['pangkat_terlapor'], 1, 0, 'C', 1);
-    $pdf->CELL(45, 6, $data['asal_dinas'], 1, 0, 'C', 1);
-    $pdf->CELL(30, 6, $data['keputusan'], 1, 0, 'C', 1);
+    $pdf->CELL(27, 6, $data['nama_pelapor'], 1, 0, 'C', 1);
+    $pdf->CELL(27, 6, $data['nama_terlapor'], 1, 0, 'C', 1);
+    $pdf->CELL(22, 6, $data['pangkat_terlapor'], 1, 0, 'C', 1);
+    $pdf->CELL(30, 6, $data['asal_dinas'], 1, 0, 'C', 1);
+    $pdf->setFont('Times', '', 8);
+    $pdf->CELL(67, 6, $data['uraian'], 1, 0, 'C', 1);
+    $pdf->setFont('Times', '', 8);
+    $pdf->CELL(20, 6, $data['keputusan'], 1, 0, 'C', 1);
 
     $ya = $ya + $row;
     $no++;

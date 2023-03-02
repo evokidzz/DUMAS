@@ -16,9 +16,9 @@ $data = mysqli_fetch_array($sql_per_id); { ?>
     <div class="card-body">
       <div class="table-responsive">
         <div>
-          <a href="?page=data-disposisi" class="btn btn-primary">
-            <i class="fas fa-long-arrow-alt-left"></i> Menu Data Berkas Disposisi</a>
-          <a href="admin\cetak\disposisi\cetak_lap_disposisi.php" target="_blank" title="Cetak" class="btn btn-success"><i class="fa fa-print"></i> Cetak Laporan</a>
+          <a href="?page=data-dumas" class="btn btn-primary">
+            <i class="fas fa-long-arrow-alt-left"></i> Menu Data Berkas Dumas</a>
+          <a href="admin\cetak\dumas\cetak_lap_dumas.php" target="_blank" title="Cetak" class="btn btn-success"><i class="fa fa-print"></i> Cetak Laporan</a>
         </div>
 
       </div>
@@ -35,14 +35,14 @@ $data = mysqli_fetch_array($sql_per_id); { ?>
               <th>PANGKAT</th>
               <th>ASAL DINAS</th>
               <th>URAIAN</th>
-              <th>LEVEL</th>
+              <th>KEPUTUSAN</th>
           </tr>
         </thead>
         <tbody>
 
           <?php
           $no = 1;
-          $sql = $koneksi->query("SELECT * FROM tb_disposisi ORDER BY id_disposisi DESC");
+          $sql = $koneksi->query("SELECT * FROM tb_dumas ORDER BY id_dumas DESC");
           while ($data = $sql->fetch_assoc()) {
           ?>
 
@@ -52,11 +52,12 @@ $data = mysqli_fetch_array($sql_per_id); { ?>
                 <td><?php echo $data['tanggal']; ?></td>
                 <td><?php echo $data['perihal']; ?></td>
                 <td><?php echo $data['nama_pelapor']; ?></td>
+                <td><?php echo $data['no_ktp']; ?></td>
                 <td><?php echo $data['nama_terlapor']; ?></td>
                 <td><?php echo $data['pangkat_terlapor']; ?></td>
                 <td><?php echo $data['asal_dinas']; ?></td>
                 <td><?php echo $data['uraian']; ?></td>
-                <td><?php echo $data['level']; ?></td>
+                <td><?php echo $data['keputusan']; ?></td>
 
     </div>
 

@@ -101,7 +101,7 @@ $data    = mysqli_fetch_array($query); ?>
             </table>
         </table>
         <table>
-            <strong style="font-size: 20px;"><b><u>TANDA TERIMA LAPORAN DISPOSISI</u></b></strong>
+            <strong style="font-size: 20px;"><b><u>TANDA TERIMA LAPORAN DUMAS</u></b></strong>
 
 
         </table>
