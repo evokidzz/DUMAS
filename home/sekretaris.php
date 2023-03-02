@@ -27,18 +27,6 @@ $data_cek = mysqli_fetch_array($query_cek, MYSQLI_BOTH); {
                         <input type="text" class="form-control" id="alamat" name="alamat" value="<?php echo $data_cek['alamat']; ?>" readonly />
                     </div>
                 </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Kecamatan</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="bidang" name="bidang" value="<?php echo $data_cek['kecamatan']; ?>" readonly />
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Kabupaten</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="bidang" name="bidang" value="<?php echo $data_cek['kabupaten']; ?>" readonly />
-                    </div>
-                </div>
 
             </div>
         </form>
