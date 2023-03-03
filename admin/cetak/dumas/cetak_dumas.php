@@ -7,7 +7,7 @@ $data = mysqli_fetch_array($sql_per_id); { ?>
   <div class="card card-dark">
     <div class="card-header">
       <h3 class="card-title">
-        <i class="fa fa-table"></i> Data Berkas Disposisi
+        <i class="fa fa-table"></i> Data Berkas Perkembangan Dumas
       </h3>
     </div>
 
@@ -31,6 +31,7 @@ $data = mysqli_fetch_array($sql_per_id); { ?>
               <th>TANGGAL</th>
               <th>PERIHAL</th>
               <th>NAMA PELAPOR</th>
+              <th>KTP</th>
               <th>NAMA TERLAPOR</th>
               <th>PANGKAT</th>
               <th>ASAL DINAS</th>

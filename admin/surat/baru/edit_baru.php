@@ -12,7 +12,7 @@ if (isset($_GET['kode'])) {
 <div class="card card-dark">
     <div class="card-header">
         <h3 class="card-title">
-            <i class="fa fa-edit"></i> Ubah Data Berkas Daftar Baru
+            <i class="fa fa-edit"></i> Ubah Data Berkas Laporan Baru
         </h3>
     </div>
     <form action="" method="post" enctype="multipart/form-data">
