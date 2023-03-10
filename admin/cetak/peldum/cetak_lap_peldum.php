@@ -75,7 +75,7 @@ $pdf->AddPage();
 
 
 
-$yi = 53;
+$yi = 44;
 $ya = 55;;
 
 $pdf->SetFont('Arial', 'B', 15);
@@ -104,7 +104,7 @@ $no = 1;
 $row = 6;
 $ya = $yi + $row;
 while ($data = mysqli_fetch_array($sql)) {
-    $pdf->setXY(8, $ya);
+    $pdf->setXY(7, $ya);
     $pdf->setFont('Times', '', 9);
     $pdf->setFillColor(255, 255, 255);
     $pdf->CELL(10, 6, $no, 1, 0, 'C', 1);

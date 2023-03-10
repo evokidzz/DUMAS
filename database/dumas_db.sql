@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 03, 2023 at 12:00 AM
+-- Generation Time: Mar 08, 2023 at 02:58 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.1
 
@@ -73,7 +73,8 @@ CREATE TABLE `tb_disposisi` (
 --
 
 INSERT INTO `tb_disposisi` (`id_disposisi`, `no_dumas`, `tanggal`, `perihal`, `nama_pelapor`, `no_ktp`, `nama_terlapor`, `pangkat_terlapor`, `asal_dinas`, `uraian`, `level`) VALUES
-(3, 'B/02/III/2022/Subbagyanduan', '2022-01-24', 'PERSELINGKUHAN', 'ANDI', '513213131', 'SUCI', 'BRIPDA', 'POLRES ASAM-ASAM', 'Melakukan tindak asusila terhadap anak dibawah umu', 'Subbid Paminal');
+(3, 'B/02/III/2022/Subbagyanduan', '2022-01-24', 'PERSELINGKUHAN', 'ANDI', '513213131', 'SUCI', 'BRIPDA', 'POLRES ASAM-ASAM', 'Melakukan tindak asusila terhadap anak dibawah umu', 'Subbid Paminal'),
+(4, 'B/02/III/2022/Subbagyanduan', '2023-03-08', 'PERSELINGKUHAN', 'YANTI', '637292927228', 'BINTORO', 'BRIPTU', 'POLRES BANJAR', 'Perselingkuhan oleh BRIPDA DIDI dengan sdri CHIKA ', 'Subbid Paminal');
 
 -- --------------------------------------------------------
 
@@ -100,7 +101,7 @@ CREATE TABLE `tb_dumas` (
 --
 
 INSERT INTO `tb_dumas` (`id_dumas`, `no_dumas`, `tanggal`, `perihal`, `nama_pelapor`, `no_ktp`, `nama_terlapor`, `pangkat_terlapor`, `asal_dinas`, `uraian`, `keputusan`) VALUES
-(1, 'B/02/III/2022/Subbagyanduan', '2023-03-02', 'ASUSILA', 'YANTI', '', 'BINTORO', 'BRIPTU', 'POLRES TANAH LAUT', 'MELAKUKAN PELECEHAN TERHADAP ANAK DIBAWAH UMUR', 'Proses Lidik');
+(1, 'B/02/III/2022/Subbagyanduan', '2023-03-02', 'ASUSILA', 'YANTI', '6324224422', 'BINTORO', 'BRIPTU', 'POLRES TANAH LAUT', 'MELAKUKAN PELECEHAN TERHADAP ANAK DIBAWAH UMUR', 'Proses Lidik');
 
 -- --------------------------------------------------------
 
@@ -163,7 +164,7 @@ INSERT INTO `tb_hasil` (`id_hasil`, `no_dumas`, `tanggal`, `perihal`, `nama_pela
 --
 
 CREATE TABLE `tb_peldum` (
-  `nik` int(20) NOT NULL,
+  `nik` varchar(20) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `alamat` varchar(150) NOT NULL,
   `desa` varchar(150) NOT NULL,
@@ -172,6 +173,13 @@ CREATE TABLE `tb_peldum` (
   `prov` varchar(150) NOT NULL,
   `pekerjaan` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_peldum`
+--
+
+INSERT INTO `tb_peldum` (`nik`, `nama`, `alamat`, `desa`, `kec`, `kab`, `prov`, `pekerjaan`) VALUES
+('1231231', 'asda', 'adad', 'asdas', 'ads', 'asda', 'ada', 'adas');
 
 -- --------------------------------------------------------
 
@@ -280,7 +288,7 @@ ALTER TABLE `tb_baru`
 -- AUTO_INCREMENT for table `tb_disposisi`
 --
 ALTER TABLE `tb_disposisi`
-  MODIFY `id_disposisi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_disposisi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tb_dumas`
@@ -299,12 +307,6 @@ ALTER TABLE `tb_hapus`
 --
 ALTER TABLE `tb_hasil`
   MODIFY `id_hasil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `tb_peldum`
---
-ALTER TABLE `tb_peldum`
-  MODIFY `nik` int(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tb_pengguna`
